@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46311C4740D600A9F288 /* AppDelegate.swift */; };
+		AA3A46341C4740D600A9F288 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46331C4740D600A9F288 /* ViewController.swift */; };
+		AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46351C4740D600A9F288 /* Main.storyboard */; };
+		AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */; };
+		AA3A463C1C4740D600A9F288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A463B1C4740D600A9F288 /* Assets.xcassets */; };
+		AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA3A462E1C4740D600A9F288 /* KaiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA3A46311C4740D600A9F288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA3A46331C4740D600A9F288 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA3A46361C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA3A46391C4740D600A9F288 /* KaiZen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KaiZen.xcdatamodel; sourceTree = "<group>"; };
+		AA3A463B1C4740D600A9F288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA3A463E1C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA3A46401C4740D600A9F288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA3A462B1C4740D600A9F288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA3A46251C4740D600A9F288 = {
+			isa = PBXGroup;
+			children = (
+				AA3A46301C4740D600A9F288 /* KaiZen */,
+				AA3A462F1C4740D600A9F288 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA3A462F1C4740D600A9F288 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A462E1C4740D600A9F288 /* KaiZen.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA3A46301C4740D600A9F288 /* KaiZen */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A46311C4740D600A9F288 /* AppDelegate.swift */,
+				AA3A46331C4740D600A9F288 /* ViewController.swift */,
+				AA3A46351C4740D600A9F288 /* Main.storyboard */,
+				AA3A463B1C4740D600A9F288 /* Assets.xcassets */,
+				AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */,
+				AA3A46401C4740D600A9F288 /* Info.plist */,
+				AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */,
+			);
+			path = KaiZen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA3A462D1C4740D600A9F288 /* KaiZen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA3A46431C4740D600A9F288 /* Build configuration list for PBXNativeTarget "KaiZen" */;
+			buildPhases = (
+				AA3A462A1C4740D600A9F288 /* Sources */,
+				AA3A462B1C4740D600A9F288 /* Frameworks */,
+				AA3A462C1C4740D600A9F288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KaiZen;
+			productName = KaiZen;
+			productReference = AA3A462E1C4740D600A9F288 /* KaiZen.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA3A46261C4740D600A9F288 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = kentaro;
+				TargetAttributes = {
+					AA3A462D1C4740D600A9F288 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = AA3A46291C4740D600A9F288 /* Build configuration list for PBXProject "KaiZen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA3A46251C4740D600A9F288;
+			productRefGroup = AA3A462F1C4740D600A9F288 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA3A462D1C4740D600A9F288 /* KaiZen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA3A462C1C4740D600A9F288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
+				AA3A463C1C4740D600A9F288 /* Assets.xcassets in Resources */,
+				AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA3A462A1C4740D600A9F288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA3A46341C4740D600A9F288 /* ViewController.swift in Sources */,
+				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,
+				AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA3A46351C4740D600A9F288 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA3A46361C4740D600A9F288 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA3A463E1C4740D600A9F288 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA3A46411C4740D600A9F288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA3A46421C4740D600A9F288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA3A46441C4740D600A9F288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KaiZen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oratnek.KaiZen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA3A46451C4740D600A9F288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KaiZen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.oratnek.KaiZen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA3A46291C4740D600A9F288 /* Build configuration list for PBXProject "KaiZen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3A46411C4740D600A9F288 /* Debug */,
+				AA3A46421C4740D600A9F288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA3A46431C4740D600A9F288 /* Build configuration list for PBXNativeTarget "KaiZen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3A46441C4740D600A9F288 /* Debug */,
+				AA3A46451C4740D600A9F288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA3A46391C4740D600A9F288 /* KaiZen.xcdatamodel */,
+			);
+			currentVersion = AA3A46391C4740D600A9F288 /* KaiZen.xcdatamodel */;
+			path = KaiZen.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AA3A46261C4740D600A9F288 /* Project object */;
+}
