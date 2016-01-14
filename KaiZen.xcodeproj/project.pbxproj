@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46311C4740D600A9F288 /* AppDelegate.swift */; };
-		AA3A46341C4740D600A9F288 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46331C4740D600A9F288 /* ViewController.swift */; };
 		AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46351C4740D600A9F288 /* Main.storyboard */; };
 		AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */; };
 		AA3A463C1C4740D600A9F288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A463B1C4740D600A9F288 /* Assets.xcassets */; };
 		AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */; };
+		AA3A46541C474C2D00A9F288 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46531C474C2D00A9F288 /* Review.swift */; };
+		AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46551C474D7400A9F288 /* ReviewSheet.swift */; };
+		AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */; };
+		AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA3A462E1C4740D600A9F288 /* KaiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A46311C4740D600A9F288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA3A46331C4740D600A9F288 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA3A46361C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA3A46391C4740D600A9F288 /* KaiZen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KaiZen.xcdatamodel; sourceTree = "<group>"; };
 		AA3A463B1C4740D600A9F288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3A463E1C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3A46401C4740D600A9F288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA3A46531C474C2D00A9F288 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		AA3A46551C474D7400A9F288 /* ReviewSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheet.swift; sourceTree = "<group>"; };
+		AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheetManager.swift; sourceTree = "<group>"; };
+		AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,106 @@
 		AA3A46301C4740D600A9F288 /* KaiZen */ = {
 			isa = PBXGroup;
 			children = (
-				AA3A46311C4740D600A9F288 /* AppDelegate.swift */,
-				AA3A46331C4740D600A9F288 /* ViewController.swift */,
-				AA3A46351C4740D600A9F288 /* Main.storyboard */,
+				AA3A46461C4741C200A9F288 /* Application */,
+				AA3A46471C474A1000A9F288 /* Scenes */,
+				AA3A464A1C474A5600A9F288 /* Models */,
+				AA3A46481C474A1B00A9F288 /* View */,
 				AA3A463B1C4740D600A9F288 /* Assets.xcassets */,
 				AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */,
 				AA3A46401C4740D600A9F288 /* Info.plist */,
 				AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */,
 			);
 			path = KaiZen;
+			sourceTree = "<group>";
+		};
+		AA3A46461C4741C200A9F288 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A46311C4740D600A9F288 /* AppDelegate.swift */,
+				AA3A46351C4740D600A9F288 /* Main.storyboard */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		AA3A46471C474A1000A9F288 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A464C1C474BAC00A9F288 /* ShowReview */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		AA3A46481C474A1B00A9F288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A46491C474A2300A9F288 /* Controllers */,
+				AA3A464B1C474ADA00A9F288 /* Views */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AA3A46491C474A2300A9F288 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AA3A464A1C474A5600A9F288 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A46531C474C2D00A9F288 /* Review.swift */,
+				AA3A46551C474D7400A9F288 /* ReviewSheet.swift */,
+				AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AA3A464B1C474ADA00A9F288 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AA3A464C1C474BAC00A9F288 /* ShowReview */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A464E1C474BBE00A9F288 /* View */,
+				AA3A464D1C474BB700A9F288 /* VIewModels */,
+			);
+			name = ShowReview;
+			sourceTree = "<group>";
+		};
+		AA3A464D1C474BB700A9F288 /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VIewModels;
+			sourceTree = "<group>";
+		};
+		AA3A464E1C474BBE00A9F288 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A46511C474BEB00A9F288 /* Controllers */,
+				AA3A46501C474BE600A9F288 /* Views */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AA3A46501C474BE600A9F288 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AA3A46511C474BEB00A9F288 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +196,7 @@
 				TargetAttributes = {
 					AA3A462D1C4740D600A9F288 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = XUC6543MQ8;
 					};
 				};
 			};
@@ -138,9 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA3A46341C4740D600A9F288 /* ViewController.swift in Sources */,
 				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,
+				AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */,
+				AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */,
 				AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */,
+				AA3A46541C474C2D00A9F288 /* Review.swift in Sources */,
+				AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +352,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KaiZen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oratnek.KaiZen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -262,10 +366,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KaiZen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oratnek.KaiZen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
