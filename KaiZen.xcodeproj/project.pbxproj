@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C790B27C5807487F3AA7C6F /* libPods-KaiZen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */; };
+		AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DB71C68521500815833 /* MainBoardViewController.swift */; };
+		AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DB91C68538600815833 /* ShowChartViewController.swift */; };
+		AA0F0DDD1C6908FC00815833 /* ReviewSheatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */; };
+		AA0F0DDF1C69094700815833 /* ReviewSheatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0F0DDE1C69094700815833 /* ReviewSheatView.xib */; };
+		AA0F0DE11C690AEF00815833 /* ReviewSheatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DE01C690AEF00815833 /* ReviewSheatViewModel.swift */; };
+		AA0F0DE41C690C5E00815833 /* ReviewSheatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DE21C690C5E00815833 /* ReviewSheatTableViewCell.swift */; };
+		AA0F0DE51C690C5E00815833 /* ReviewSheatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0F0DE31C690C5E00815833 /* ReviewSheatTableViewCell.xib */; };
+		AA1AEB811C6A394300C70138 /* AddReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AEB801C6A394300C70138 /* AddReviewView.xib */; };
+		AA1AEB831C6A395900C70138 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB821C6A395900C70138 /* AddReviewView.swift */; };
+		AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB841C6AF9E400C70138 /* ChartView.swift */; };
+		AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AEB861C6AF9EF00C70138 /* ChartView.xib */; };
 		AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46311C4740D600A9F288 /* AppDelegate.swift */; };
 		AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46351C4740D600A9F288 /* Main.storyboard */; };
 		AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */; };
@@ -16,9 +28,24 @@
 		AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46551C474D7400A9F288 /* ReviewSheet.swift */; };
 		AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */; };
 		AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */; };
+		AA3A46721C48EF3800A9F288 /* show.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46711C48EF3800A9F288 /* show.png */; };
+		AAA76AD81C4F7D70006184E8 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA76AD71C4F7D70006184E8 /* ball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E196CC5BC3F32E7D3204B0A /* Pods-KaiZen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaiZen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaiZen/Pods-KaiZen.debug.xcconfig"; sourceTree = "<group>"; };
+		A380AFCFE4360B64DE6555A6 /* Pods-KaiZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaiZen.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaiZen/Pods-KaiZen.release.xcconfig"; sourceTree = "<group>"; };
+		AA0F0DB71C68521500815833 /* MainBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBoardViewController.swift; sourceTree = "<group>"; };
+		AA0F0DB91C68538600815833 /* ShowChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowChartViewController.swift; sourceTree = "<group>"; };
+		AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheatView.swift; sourceTree = "<group>"; };
+		AA0F0DDE1C69094700815833 /* ReviewSheatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewSheatView.xib; sourceTree = "<group>"; };
+		AA0F0DE01C690AEF00815833 /* ReviewSheatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheatViewModel.swift; sourceTree = "<group>"; };
+		AA0F0DE21C690C5E00815833 /* ReviewSheatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheatTableViewCell.swift; sourceTree = "<group>"; };
+		AA0F0DE31C690C5E00815833 /* ReviewSheatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewSheatTableViewCell.xib; sourceTree = "<group>"; };
+		AA1AEB801C6A394300C70138 /* AddReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReviewView.xib; sourceTree = "<group>"; };
+		AA1AEB821C6A395900C70138 /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		AA1AEB841C6AF9E400C70138 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		AA1AEB861C6AF9EF00C70138 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		AA3A462E1C4740D600A9F288 /* KaiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A46311C4740D600A9F288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A46361C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +57,9 @@
 		AA3A46551C474D7400A9F288 /* ReviewSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheet.swift; sourceTree = "<group>"; };
 		AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheetManager.swift; sourceTree = "<group>"; };
 		AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReviewViewController.swift; sourceTree = "<group>"; };
+		AA3A46711C48EF3800A9F288 /* show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show.png; sourceTree = "<group>"; };
+		AAA76AD71C4F7D70006184E8 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaiZen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +67,87 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C790B27C5807487F3AA7C6F /* libPods-KaiZen.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		297F437FAE0A244F8141283E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F207C87DAA0799085B53C19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E196CC5BC3F32E7D3204B0A /* Pods-KaiZen.debug.xcconfig */,
+				A380AFCFE4360B64DE6555A6 /* Pods-KaiZen.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA04D51A1C5621C3009BD0A8 /* ShowChart */ = {
+			isa = PBXGroup;
+			children = (
+				AA04D51C1C5621ED009BD0A8 /* View */,
+				AA04D51B1C5621E4009BD0A8 /* ViewModels */,
+			);
+			name = ShowChart;
+			sourceTree = "<group>";
+		};
+		AA04D51B1C5621E4009BD0A8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		AA04D51C1C5621ED009BD0A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA04D51E1C5621F9009BD0A8 /* Controllers */,
+				AA04D51D1C5621F3009BD0A8 /* Views */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AA04D51D1C5621F3009BD0A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA1AEB841C6AF9E400C70138 /* ChartView.swift */,
+				AA1AEB861C6AF9EF00C70138 /* ChartView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AA04D51E1C5621F9009BD0A8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA0F0DB91C68538600815833 /* ShowChartViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AA0F0DB61C6851D500815833 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA0F0DB71C68521500815833 /* MainBoardViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		AA3A46251C4740D600A9F288 = {
 			isa = PBXGroup;
 			children = (
 				AA3A46301C4740D600A9F288 /* KaiZen */,
 				AA3A462F1C4740D600A9F288 /* Products */,
+				6F207C87DAA0799085B53C19 /* Pods */,
+				297F437FAE0A244F8141283E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +166,7 @@
 				AA3A46471C474A1000A9F288 /* Scenes */,
 				AA3A464A1C474A5600A9F288 /* Models */,
 				AA3A46481C474A1B00A9F288 /* View */,
+				AA0F0DB61C6851D500815833 /* View Controllers */,
 				AA3A463B1C4740D600A9F288 /* Assets.xcassets */,
 				AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */,
 				AA3A46401C4740D600A9F288 /* Info.plist */,
@@ -79,6 +180,8 @@
 			children = (
 				AA3A46311C4740D600A9F288 /* AppDelegate.swift */,
 				AA3A46351C4740D600A9F288 /* Main.storyboard */,
+				AA3A46711C48EF3800A9F288 /* show.png */,
+				AAA76AD71C4F7D70006184E8 /* ball.png */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -87,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				AA3A464C1C474BAC00A9F288 /* ShowReview */,
+				AA04D51A1C5621C3009BD0A8 /* ShowChart */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -136,6 +240,7 @@
 		AA3A464D1C474BB700A9F288 /* VIewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AA0F0DE01C690AEF00815833 /* ReviewSheatViewModel.swift */,
 			);
 			name = VIewModels;
 			sourceTree = "<group>";
@@ -152,6 +257,12 @@
 		AA3A46501C474BE600A9F288 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */,
+				AA0F0DDE1C69094700815833 /* ReviewSheatView.xib */,
+				AA0F0DE21C690C5E00815833 /* ReviewSheatTableViewCell.swift */,
+				AA0F0DE31C690C5E00815833 /* ReviewSheatTableViewCell.xib */,
+				AA1AEB821C6A395900C70138 /* AddReviewView.swift */,
+				AA1AEB801C6A394300C70138 /* AddReviewView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -171,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA3A46431C4740D600A9F288 /* Build configuration list for PBXNativeTarget "KaiZen" */;
 			buildPhases = (
+				F7AF5827B1BA2E11A0AAE302 /* Check Pods Manifest.lock */,
 				AA3A462A1C4740D600A9F288 /* Sources */,
 				AA3A462B1C4740D600A9F288 /* Frameworks */,
 				AA3A462C1C4740D600A9F288 /* Resources */,
+				3B85BA0B624E7BEB07BF0F02 /* Embed Pods Frameworks */,
+				A62C54B81D972542DA7D25DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,6 +338,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
+				AA3A46721C48EF3800A9F288 /* show.png in Resources */,
+				AA0F0DE51C690C5E00815833 /* ReviewSheatTableViewCell.xib in Resources */,
+				AA0F0DDF1C69094700815833 /* ReviewSheatView.xib in Resources */,
+				AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */,
+				AA1AEB811C6A394300C70138 /* AddReviewView.xib in Resources */,
+				AAA76AD81C4F7D70006184E8 /* ball.png in Resources */,
 				AA3A463C1C4740D600A9F288 /* Assets.xcassets in Resources */,
 				AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */,
 			);
@@ -231,15 +351,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B85BA0B624E7BEB07BF0F02 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KaiZen/Pods-KaiZen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A62C54B81D972542DA7D25DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KaiZen/Pods-KaiZen-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7AF5827B1BA2E11A0AAE302 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA3A462A1C4740D600A9F288 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */,
+				AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */,
 				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,
+				AA0F0DE11C690AEF00815833 /* ReviewSheatViewModel.swift in Sources */,
+				AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */,
 				AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */,
+				AA0F0DE41C690C5E00815833 /* ReviewSheatTableViewCell.swift in Sources */,
 				AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */,
 				AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */,
+				AA1AEB831C6A395900C70138 /* AddReviewView.swift in Sources */,
+				AA0F0DDD1C6908FC00815833 /* ReviewSheatView.swift in Sources */,
 				AA3A46541C474C2D00A9F288 /* Review.swift in Sources */,
 				AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */,
 			);
@@ -350,6 +525,7 @@
 		};
 		AA3A46441C4740D600A9F288 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E196CC5BC3F32E7D3204B0A /* Pods-KaiZen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -364,6 +540,7 @@
 		};
 		AA3A46451C4740D600A9F288 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A380AFCFE4360B64DE6555A6 /* Pods-KaiZen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -395,6 +572,7 @@
 				AA3A46451C4740D600A9F288 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
