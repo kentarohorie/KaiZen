@@ -30,6 +30,7 @@
 		AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */; };
 		AA3A46721C48EF3800A9F288 /* show.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46711C48EF3800A9F288 /* show.png */; };
 		AAA76AD81C4F7D70006184E8 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA76AD71C4F7D70006184E8 /* ball.png */; };
+		AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReviewViewController.swift; sourceTree = "<group>"; };
 		AA3A46711C48EF3800A9F288 /* show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show.png; sourceTree = "<group>"; };
 		AAA76AD71C4F7D70006184E8 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaiZen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 		AA04D51B1C5621E4009BD0A8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				AA0F0DDD1C6908FC00815833 /* ReviewSheatView.swift in Sources */,
 				AA3A46541C474C2D00A9F288 /* Review.swift in Sources */,
 				AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */,
+				AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
