@@ -11,7 +11,7 @@ import UIKit
 class MainBoardViewController: UIViewController, UIPageViewControllerDataSource {
 
     var isFirst: Bool = true
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         pageViewControllerSetting()
@@ -51,9 +51,11 @@ class MainBoardViewController: UIViewController, UIPageViewControllerDataSource 
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let className = NSStringFromClass(viewController.dynamicType).componentsSeparatedByString(".").last!
+        
         if className == "ShowReviewViewController" {
-            let showReviewController = ShowChartViewController()
-            return showReviewController
+            let showChartViewController = ShowChartViewController()
+
+            return showChartViewController
         } else if className == "ShowChartViewController" {
             return nil
         } else {
