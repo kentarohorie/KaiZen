@@ -61,6 +61,7 @@
 		AA3A46711C48EF3800A9F288 /* show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show.png; sourceTree = "<group>"; };
 		AAA76AD71C4F7D70006184E8 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		AAB3E2A51C6B813300B429DB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaiZen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +175,7 @@
 				AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */,
 				AA3A46401C4740D600A9F288 /* Info.plist */,
 				AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */,
+				AAB3E2A51C6B813300B429DB /* Bridging-Header.h */,
 			);
 			path = KaiZen;
 			sourceTree = "<group>";
@@ -539,6 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oratnek.KaiZen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -554,6 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oratnek.KaiZen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -9,9 +9,19 @@
 import UIKit
 
 class ChartView: UIView {
-
+    
+    var graphView: BEMSimpleLineGraphView!
+    
     override func awakeFromNib() {
-        self.backgroundColor = UIColor.yellowColor()
-    }
+        graphView = BEMSimpleLineGraphView(frame: self.frame)
 
+        graphView.enableReferenceAxisFrame = true
+        graphView.enableReferenceXAxisLines = true
+        graphView.enableXAxisLabel = true
+        graphView.enableBezierCurve = true
+        graphView.autoScaleYAxis = true
+        
+        self.addSubview(graphView)
+    }
+    
 }
