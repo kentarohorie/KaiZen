@@ -55,7 +55,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
         addReviewView = customDelegate?.tapAddReview!()
         addReviewView?.center = CGPoint(x: self.center.x, y: -(addReviewView!.frame.height))
         
-        UIView.animateWithDuration(0.5) { () -> Void in
+        UIView.animateWithDuration(0.8) { () -> Void in
             self.addReviewView?.center.y = self.center.y
         }
         
