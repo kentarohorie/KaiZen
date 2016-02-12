@@ -870,9 +870,9 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     
     // Set the final center point of the x-axis labels
     if (self.positionYAxisRight) {
-        center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height/2);
+        center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height + 5);
     } else {
-        center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height/2);
+        center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height + 5);
     }
     
     CGRect rect = labelXAxis.frame;
