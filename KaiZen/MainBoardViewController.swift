@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MainBoardViewController: UIViewController, UIPageViewControllerDataSource {
-
-    var isFirst: Bool = true
+class MainBoardViewController: UIViewController {
+    
+    let generalViewModel: GeneralViewModel = GeneralViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         pageViewControllerSetting()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,7 +26,7 @@ class MainBoardViewController: UIViewController, UIPageViewControllerDataSource 
     
     func pageViewControllerSetting() {
         let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-        pageViewController.dataSource = self
+        pageViewController.dataSource = generalViewModel
         
         let startingViewController = ShowReviewViewController()
         let viewControllers = [startingViewController]
@@ -37,30 +38,4 @@ class MainBoardViewController: UIViewController, UIPageViewControllerDataSource 
         pageViewController.didMoveToParentViewController(self)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let className = NSStringFromClass(viewController.dynamicType).componentsSeparatedByString(".").last!
-        if className == "ShowChartViewController" {
-            let showReviewController = ShowReviewViewController()
-            return showReviewController
-        } else if className == "ShowReviewViewController" {
-            return nil
-        } else {
-            return nil
-        }
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let className = NSStringFromClass(viewController.dynamicType).componentsSeparatedByString(".").last!
-        
-        if className == "ShowReviewViewController" {
-            let showChartViewController = ShowChartViewController()
-
-            return showChartViewController
-        } else if className == "ShowChartViewController" {
-            return nil
-        } else {
-            return nil
-        }
-    }
-
 }

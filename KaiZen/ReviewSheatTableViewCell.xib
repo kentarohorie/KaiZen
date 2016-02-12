@@ -15,10 +15,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hogehoge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-Aq-wTF">
+                        <rect key="frame" x="8" y="8" width="242" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-fO-deg">
-                        <rect key="frame" x="293" y="16" width="72" height="29"/>
+                        <rect key="frame" x="258" y="16" width="109" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="72" id="zYb-m0-x8N"/>
+                            <constraint firstAttribute="width" constant="109" id="yU8-Ke-heb"/>
                         </constraints>
                         <segments>
                             <segment title="◯"/>
@@ -26,20 +32,14 @@
                             <segment title="×"/>
                         </segments>
                     </segmentedControl>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hogehoge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-Aq-wTF">
-                        <rect key="frame" x="8" y="8" width="277" height="44"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="9HK-PD-0PD"/>
-                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="centerY" secondItem="Vyw-fO-deg" secondAttribute="centerY" id="BxL-eT-3oo"/>
-                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="No9-ho-pMF"/>
-                    <constraint firstItem="Vyw-fO-deg" firstAttribute="leading" secondItem="Cbc-Aq-wTF" secondAttribute="trailing" constant="8" symbolic="YES" id="Wa7-a9-cua"/>
-                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pne-sU-oGt"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vyw-fO-deg" secondAttribute="trailing" constant="2" id="qss-Ti-z9R"/>
+                    <constraint firstItem="Vyw-fO-deg" firstAttribute="leading" secondItem="Cbc-Aq-wTF" secondAttribute="trailing" constant="8" symbolic="YES" id="F8P-m9-6l4"/>
+                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Pij-mV-FYT"/>
+                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VtJ-mI-ROW"/>
+                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="centerY" secondItem="Vyw-fO-deg" secondAttribute="centerY" id="bhF-d4-tk3"/>
+                    <constraint firstItem="Cbc-Aq-wTF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="gE5-9m-LXH"/>
+                    <constraint firstItem="Vyw-fO-deg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="lnU-Em-u19"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

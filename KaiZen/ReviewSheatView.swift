@@ -8,9 +8,10 @@
 
 import UIKit
 
-protocol ReviewSheatViewDelegate {
-    func tapEdit(callback: () -> Void)
-    func tapAddReview() -> AddReviewView
+@objc protocol ReviewSheatViewDelegate {
+    optional func tapEdit(callback: () -> Void)
+    optional func tapAddReview() -> AddReviewView
+    optional func tapDone()
 }
 
 class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
@@ -45,20 +46,24 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     //---------get event ------------------------
     
     @IBAction func tapEdit(sender: UIButton) {
-        customDelegate?.tapEdit({ () -> Void in
+        customDelegate?.tapEdit!({ () -> Void in
             self.tableView.reloadData()
         })
     }
     
     @IBAction func tapAddReview(sender: UIButton) {
-        addReviewView = customDelegate?.tapAddReview()
+        addReviewView = customDelegate?.tapAddReview!()
         addReviewView?.center = CGPoint(x: self.center.x, y: -(addReviewView!.frame.height))
         
-        UIView.animateWithDuration(1) { () -> Void in
+        UIView.animateWithDuration(0.5) { () -> Void in
             self.addReviewView?.center.y = self.center.y
         }
         
         self.addSubview(addReviewView!)
+    }
+    
+    @IBAction func tapDone(sender: UIButton) {
+        customDelegate?.tapDone!()
     }
     
     //----- send event ------------

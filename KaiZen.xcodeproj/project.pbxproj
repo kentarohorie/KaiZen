@@ -29,6 +29,7 @@
 		AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */; };
 		AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */; };
 		AA3A46721C48EF3800A9F288 /* show.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46711C48EF3800A9F288 /* show.png */; };
+		AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87A0591C6C24D100560495 /* GeneralViewModel.swift */; };
 		AAA76AD81C4F7D70006184E8 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA76AD71C4F7D70006184E8 /* ball.png */; };
 		AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheetManager.swift; sourceTree = "<group>"; };
 		AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReviewViewController.swift; sourceTree = "<group>"; };
 		AA3A46711C48EF3800A9F288 /* show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show.png; sourceTree = "<group>"; };
+		AA87A0591C6C24D100560495 /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		AAA76AD71C4F7D70006184E8 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		AAB3E2A51C6B813300B429DB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				AA3A464A1C474A5600A9F288 /* Models */,
 				AA3A46481C474A1B00A9F288 /* View */,
 				AA0F0DB61C6851D500815833 /* View Controllers */,
+				AA87A0581C6C247900560495 /* View Model */,
 				AA3A463B1C4740D600A9F288 /* Assets.xcassets */,
 				AA3A463D1C4740D600A9F288 /* LaunchScreen.storyboard */,
 				AA3A46401C4740D600A9F288 /* Info.plist */,
@@ -278,6 +281,14 @@
 				AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AA87A0581C6C247900560495 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA87A0591C6C24D100560495 /* GeneralViewModel.swift */,
+			);
+			name = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +422,7 @@
 			files = (
 				AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */,
 				AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */,
+				AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */,
 				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,
 				AA0F0DE11C690AEF00815833 /* ReviewSheatViewModel.swift in Sources */,
 				AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */,

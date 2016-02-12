@@ -51,7 +51,7 @@ class AddReviewView: UIView {
 
         self.customDelegate?.tapAddOfAddView!(textField.text!)
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.center.y = -(self.frame.height)
             }) { (bool) -> Void in
                 self.removeFromSuperview()

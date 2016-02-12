@@ -14,14 +14,20 @@ class ChartView: UIView {
     
     override func awakeFromNib() {
         graphView = BEMSimpleLineGraphView(frame: self.frame)
-
+        
         graphView.enableReferenceAxisFrame = true
         graphView.enableReferenceXAxisLines = true
         graphView.enableXAxisLabel = true
         graphView.enableBezierCurve = true
         graphView.autoScaleYAxis = true
+        graphView.animationGraphEntranceTime = 3
         
         self.addSubview(graphView)
     }
+    
+//    func xAxisLabelWithText(text: String, index: Int) -> UILabel
+//    
+//    [4:42]
+//    let center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height + 5)
     
 }
