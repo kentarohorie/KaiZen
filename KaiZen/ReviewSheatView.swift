@@ -64,6 +64,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     
     @IBAction func tapDone(sender: UIButton) {
         customDelegate?.tapDone!()
+        setDoneAlert()
     }
     
     //----- send event ------------
@@ -71,4 +72,18 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     func changeTableViewDate() {
         tableView.reloadData()
     }
+    
+    func setDoneAlert() {
+        let alertController = UIAlertController(title: "反省完了!", message: nil, preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKAction)
+        
+        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while ((baseView?.presentedViewController) != nil)  {
+            baseView = baseView?.presentedViewController
+        }
+        
+        baseView?.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 }
