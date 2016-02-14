@@ -13,7 +13,7 @@ import UIKit
     optional func reviewViewAlert()
 }
 
-class AddReviewView: UIView {
+class AddReviewView: UIView, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     var customDelegate: AddReviewViewDelegate?
@@ -28,6 +28,8 @@ class AddReviewView: UIView {
         self.layer.borderColor = UIColor.grayColor().CGColor
         self.layer.borderWidth = 0.8
         self.layer.cornerRadius = self.frame.width / 40
+        
+        textField.delegate = self
     }
     
     //----- event ------------
@@ -56,5 +58,21 @@ class AddReviewView: UIView {
             }) { (bool) -> Void in
                 self.removeFromSuperview()
         }
+        
+        textField.resignFirstResponder()
     }
+    
+    @IBAction func tapClose(sender: UIButton) {
+        UIView.animateWithDuration(0.8, animations: { () -> Void in
+            self.center.y = -(self.frame.height)
+            }) { (bool) -> Void in
+                self.removeFromSuperview()
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
