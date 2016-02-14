@@ -10,13 +10,13 @@ import UIKit
 
 class ShowChartViewController: UIViewController {
     
-    var chartView: ChartView!
+    var chartView: ChartView?
     let chartViewModel = ChartViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chartViewSetUP()
+        setNoDataView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +24,27 @@ class ShowChartViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        chartView.graphView.reloadGraph()
+        if self.view.subviews.isEmpty {
+            chartViewSetUP()
+        }
+        
+        if chartViewModel.reviewSheetManager.reviewSheetArray.count != 0 {
+            chartViewSetUP()
+//            chartView!.graphView.reloadGraph()
+        }
     }
     
     func chartViewSetUP() {
-        chartView = UINib(nibName: "ChartView", bundle: nil).instantiateWithOwner(self, options: nil).first as! ChartView
-        chartView.graphView.delegate = chartViewModel
-        chartView.graphView.dataSource = chartViewModel
+        chartView = UINib(nibName: "ChartView", bundle: nil).instantiateWithOwner(self, options: nil).first as? ChartView
+        chartView!.graphView.delegate = chartViewModel
+        chartView!.graphView.dataSource = chartViewModel
         
-        self.view = chartView
+        self.view.addSubview(chartView!)
+    }
+    
+    func setNoDataView() {
+        let noGraphDataView = UINib(nibName: "NoGraphDataView", bundle: nil).instantiateWithOwner(self, options: nil).first as? NoGraphDataView
+        self.view = noGraphDataView
     }
     
 }

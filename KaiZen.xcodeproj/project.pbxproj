@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C790B27C5807487F3AA7C6F /* libPods-KaiZen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */; };
+		AA0117081C70423E00843BA1 /* NoGraphDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0117071C70423E00843BA1 /* NoGraphDataView.swift */; };
+		AA01170A1C70424F00843BA1 /* NoGraphDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0117091C70424F00843BA1 /* NoGraphDataView.xib */; };
 		AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DB71C68521500815833 /* MainBoardViewController.swift */; };
 		AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DB91C68538600815833 /* ShowChartViewController.swift */; };
 		AA0F0DDD1C6908FC00815833 /* ReviewSheatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		2E196CC5BC3F32E7D3204B0A /* Pods-KaiZen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaiZen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaiZen/Pods-KaiZen.debug.xcconfig"; sourceTree = "<group>"; };
 		A380AFCFE4360B64DE6555A6 /* Pods-KaiZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaiZen.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaiZen/Pods-KaiZen.release.xcconfig"; sourceTree = "<group>"; };
+		AA0117071C70423E00843BA1 /* NoGraphDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoGraphDataView.swift; sourceTree = "<group>"; };
+		AA0117091C70424F00843BA1 /* NoGraphDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoGraphDataView.xib; sourceTree = "<group>"; };
 		AA0F0DB71C68521500815833 /* MainBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBoardViewController.swift; sourceTree = "<group>"; };
 		AA0F0DB91C68538600815833 /* ShowChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowChartViewController.swift; sourceTree = "<group>"; };
 		AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheatView.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			children = (
 				AA1AEB841C6AF9E400C70138 /* ChartView.swift */,
 				AA1AEB861C6AF9EF00C70138 /* ChartView.xib */,
+				AA0117071C70423E00843BA1 /* NoGraphDataView.swift */,
+				AA0117091C70424F00843BA1 /* NoGraphDataView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			files = (
 				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
 				AA3A46721C48EF3800A9F288 /* show.png in Resources */,
+				AA01170A1C70424F00843BA1 /* NoGraphDataView.xib in Resources */,
 				AA0F0DE51C690C5E00815833 /* ReviewSheatTableViewCell.xib in Resources */,
 				AA0F0DDF1C69094700815833 /* ReviewSheatView.xib in Resources */,
 				AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */,
@@ -424,6 +431,7 @@
 				AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */,
 				AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */,
 				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,
+				AA0117081C70423E00843BA1 /* NoGraphDataView.swift in Sources */,
 				AA0F0DE11C690AEF00815833 /* ReviewSheatViewModel.swift in Sources */,
 				AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */,
 				AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */,
