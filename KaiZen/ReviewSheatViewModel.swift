@@ -64,7 +64,6 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     
     
     
-    
     //---------------tableViewSetting-----------------
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
