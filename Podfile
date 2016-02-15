@@ -4,5 +4,6 @@
 # use_frameworks!
 
 target 'KaiZen' do
+    pod 'BEMSimpleLineGraph'
 end
 

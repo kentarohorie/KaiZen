@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C5786397A4AAAEBA72C3EA70A2D7C572'
-               BlueprintName = 'Pods-KaiZen'
+               BlueprintIdentifier = '0D3A2255DD8FDD12BBA7AF5EC328AB34'
+               BlueprintName = 'BEMSimpleLineGraph'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-KaiZen.a'>
+               BuildableName = 'libBEMSimpleLineGraph.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

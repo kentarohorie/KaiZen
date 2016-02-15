@@ -34,6 +34,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="done"/>
+                    <connections>
+                        <action selector="tapDone:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Vy-ai-LVO"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cw-Hd-Pzr">
                     <rect key="frame" x="8" y="44" width="88" height="30"/>

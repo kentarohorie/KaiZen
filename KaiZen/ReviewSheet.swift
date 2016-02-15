@@ -8,7 +8,6 @@
 
 import UIKit
 
-class ReviewSheet {
+class ReviewSheet {    
     var reviewArray: [Review] = []
-    var goal: [String: Int] = [:]
 }

@@ -14,6 +14,7 @@ protocol ReviewSheatViewModelDelegate {
 
 class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate, ReviewSheatTableViewCellDelegate, ReviewSheatViewDelegate, AddReviewViewDelegate {
     
+    let reviewSheetManager: ReviewSheetManager = ReviewSheetManager.sharedInstance
     var reviewSheet: ReviewSheet = ReviewSheet()
     var customDelegate: ReviewSheatViewModelDelegate?
     
@@ -48,6 +49,18 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         customDelegate?.changeTableViewDate()
     }
     
+    func tapDone() {
+        let appendReviewSheet = ReviewSheet()
+        
+        for review in reviewSheet.reviewArray {
+            let appendReview = Review()
+            appendReview.reviewPoint = review.reviewPoint
+            appendReview.reviewText = review.reviewText
+            appendReviewSheet.reviewArray.append(appendReview)
+        }
+        
+        reviewSheetManager.reviewSheetArray.append(appendReviewSheet)
+    }
     
     
     

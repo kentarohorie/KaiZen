@@ -29,7 +29,6 @@ class ShowReviewViewController: UIViewController {
         reviewSheatView.tableView.dataSource = reviewSheatViewModel
         reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatView.tableView.delegate = reviewSheatViewModel
-        
         reviewSheatViewModel.customDelegate = reviewSheatView
         
         self.view = reviewSheatView
