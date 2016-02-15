@@ -21,15 +21,15 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-fO-deg">
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-fO-deg">
                         <rect key="frame" x="258" y="16" width="109" height="29"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="109" id="yU8-Ke-heb"/>
                         </constraints>
                         <segments>
-                            <segment title="◯"/>
+                            <segment title="x"/>
                             <segment title="△"/>
-                            <segment title="×"/>
+                            <segment title="◯"/>
                         </segments>
                     </segmentedControl>
                 </subviews>

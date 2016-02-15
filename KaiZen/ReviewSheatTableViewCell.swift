@@ -33,7 +33,6 @@ class ReviewSheatTableViewCell: UITableViewCell {
     func setUP() {
         self.layer.borderWidth = 0.6
         self.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
-        
         self.selectionStyle = .None
         
         gradeSegmentedControl.addTarget(self, action: "changeSegConValue:", forControlEvents: .ValueChanged)
