@@ -9,16 +9,16 @@
 import UIKit
 
 @objc protocol ReviewSheatViewDelegate {
-    optional func tapEdit(callback: () -> Void)
+    optional func tapEdit(tableView: UITableView, callback: () -> Void)
     optional func tapAddReview() -> AddReviewView
-    optional func tapDone()
+    optional func tapDone(tableView: UITableView)
 }
 
 class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    var customDelegate: ReviewSheatViewDelegate?
+    weak var customDelegate: ReviewSheatViewDelegate?
     var addReviewView: AddReviewView?
     
     override func awakeFromNib() {
@@ -46,7 +46,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     //---------get event ------------------------
     
     @IBAction func tapEdit(sender: UIButton) {
-        customDelegate?.tapEdit!({ () -> Void in
+        customDelegate?.tapEdit!(tableView, callback: { () -> Void in
             self.tableView.reloadData()
         })
     }
@@ -63,7 +63,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     }
     
     @IBAction func tapDone(sender: UIButton) {
-        customDelegate?.tapDone!()
+        customDelegate?.tapDone!(tableView)
         setDoneAlert()
     }
     
