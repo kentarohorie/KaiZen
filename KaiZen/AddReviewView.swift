@@ -16,7 +16,7 @@ import UIKit
 class AddReviewView: UIView, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
-    var customDelegate: AddReviewViewDelegate?
+    weak var customDelegate: AddReviewViewDelegate?
  
     override func awakeFromNib() {
         setUP()

@@ -8,15 +8,23 @@
 
 import UIKit
 
+@objc protocol ShowReviewViewControllerDelegate {
+    optional func viewDidLoad(callback: () -> Void)
+}
+
 class ShowReviewViewController: UIViewController {
     
     var reviewSheatView: ReviewSheatView!
     let reviewSheatViewModel: ReviewSheatViewModel = ReviewSheatViewModel()
+    weak var customDelegate: ShowReviewViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        reviewSheatViewSetUP()
+        self.customDelegate = reviewSheatViewModel
+        customDelegate?.viewDidLoad!({ () -> Void in
+            self.reviewSheatViewSetUP()
+        })
     }
 
     override func didReceiveMemoryWarning() {

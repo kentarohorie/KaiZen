@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ReviewSheatTableViewCellDelegate {
+@objc protocol ReviewSheatTableViewCellDelegate {
     func changeSegConValue(sender: UISegmentedControl)
 }
 
@@ -16,7 +16,7 @@ class ReviewSheatTableViewCell: UITableViewCell {
 
     @IBOutlet weak var reviewTextLabel: UILabel!
     @IBOutlet weak var gradeSegmentedControl: UISegmentedControl!
-    var customDelegate: ReviewSheatTableViewCellDelegate?
+    weak var customDelegate: ReviewSheatTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
