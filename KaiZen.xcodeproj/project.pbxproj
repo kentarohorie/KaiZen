@@ -21,6 +21,8 @@
 		AA1AEB831C6A395900C70138 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB821C6A395900C70138 /* AddReviewView.swift */; };
 		AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB841C6AF9E400C70138 /* ChartView.swift */; };
 		AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AEB861C6AF9EF00C70138 /* ChartView.xib */; };
+		AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA28E14D1C744ACC0073453F /* SideMenuView.xib */; };
+		AA28E1501C744AE90073453F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28E14F1C744AE90073453F /* SideMenuView.swift */; };
 		AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46311C4740D600A9F288 /* AppDelegate.swift */; };
 		AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46351C4740D600A9F288 /* Main.storyboard */; };
 		AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */; };
@@ -52,6 +54,8 @@
 		AA1AEB821C6A395900C70138 /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		AA1AEB841C6AF9E400C70138 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		AA1AEB861C6AF9EF00C70138 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		AA28E14D1C744ACC0073453F /* SideMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuView.xib; sourceTree = "<group>"; };
+		AA28E14F1C744AE90073453F /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		AA3A462E1C4740D600A9F288 /* KaiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A46311C4740D600A9F288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A46361C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +157,15 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		AA28E14C1C744AA80073453F /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AA28E14F1C744AE90073453F /* SideMenuView.swift */,
+				AA28E14D1C744ACC0073453F /* SideMenuView.xib */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		AA3A46251C4740D600A9F288 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +216,7 @@
 		AA3A46471C474A1000A9F288 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AA28E14C1C744AA80073453F /* SideMenu */,
 				AA3A464C1C474BAC00A9F288 /* ShowReview */,
 				AA04D51A1C5621C3009BD0A8 /* ShowChart */,
 			);
@@ -359,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */,
 				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
 				AA3A46721C48EF3800A9F288 /* show.png in Resources */,
 				AA01170A1C70424F00843BA1 /* NoGraphDataView.xib in Resources */,
@@ -428,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */,
+				AA28E1501C744AE90073453F /* SideMenuView.swift in Sources */,
 				AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */,
 				AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */,
 				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,

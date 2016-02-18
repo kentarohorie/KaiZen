@@ -12,17 +12,18 @@ import UIKit
     optional func tapEdit(tableView: UITableView, callback: () -> Void)
     optional func tapAddReview() -> AddReviewView
     optional func tapDone(tableView: UITableView)
+    optional func edgeSwipeRight(superView: UIView) -> SideMenuView
 }
 
-class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
+class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate, SideMenuViewDelegate {
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     weak var customDelegate: ReviewSheatViewDelegate?
     var addReviewView: AddReviewView?
+    var sideMenuView: SideMenuView?
     
     override func awakeFromNib() {
-        
         setUP()
     }
     
@@ -30,6 +31,8 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     
     func setUP() {
         tableViewSetUP()
+        setGesture()
+        
         self.bringSubviewToFront(doneButton)
         doneButton.layer.borderWidth = 0.6
         doneButton.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
@@ -43,7 +46,14 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
         tableView.layer.cornerRadius = tableView.frame.width / 30
     }
     
-    //---------get event ------------------------
+    func setGesture() {
+        let edgePanGestureRecog = UIScreenEdgePanGestureRecognizer(target: self, action: "edgeSwipeRight:")
+        edgePanGestureRecog.edges = .Left
+        edgePanGestureRecog.delegate = self
+        self.addGestureRecognizer(edgePanGestureRecog)
+    }
+    
+    //---------receive event ------------------------
     
     @IBAction func tapEdit(sender: UIButton) {
         customDelegate?.tapEdit!(tableView, callback: { () -> Void in
@@ -65,6 +75,20 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate {
     @IBAction func tapDone(sender: UIButton) {
         customDelegate?.tapDone!(tableView)
         setDoneAlert()
+    }
+    
+    func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
+        print("hoge")
+        if sideMenuView == nil {
+            sideMenuView = customDelegate?.edgeSwipeRight!(self)
+            sideMenuView?.customDelegate = self
+            self.addSubview(sideMenuView!)
+            sideMenuView?.appearSideMenu()
+        }
+    }
+    
+    func sideMenuDidRemoveSelf() {
+        sideMenuView = nil
     }
     
     //----- send event ------------

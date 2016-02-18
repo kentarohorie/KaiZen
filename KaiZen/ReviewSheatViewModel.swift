@@ -19,7 +19,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     weak var customDelegate: ReviewSheatViewModelDelegate?
     var isTapEdit: Bool = true
     
-    //------- delegate method -------
+    //------- receive and send data ----------
     
     func changeSegConValue(sender: UISegmentedControl) {
         let cell = sender.superview?.superview as! UITableViewCell
@@ -87,6 +87,14 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
             callback()
         }
     }
+    
+    func edgeSwipeRight(superView: UIView) -> SideMenuView {
+        let sideMenuView = UINib(nibName: "SideMenuView", bundle: nil).instantiateWithOwner(self, options: nil).first as! SideMenuView
+        sideMenuView.framingFromSuperView(superView)
+        
+        return sideMenuView
+    }
+    
     
     
     //---------------tableViewSetting-----------------

@@ -24,6 +24,7 @@ class ShowReviewViewController: UIViewController {
         self.customDelegate = reviewSheatViewModel
         customDelegate?.viewDidLoad!({ () -> Void in
             self.reviewSheatViewSetUP()
+
         })
     }
 
