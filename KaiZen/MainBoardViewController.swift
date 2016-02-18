@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainBoardViewController: UIViewController {
+class MainBoardViewController: UIViewController, UIScrollViewDelegate {
     
     let generalViewModel: GeneralViewModel = GeneralViewModel()
 
@@ -23,10 +23,11 @@ class MainBoardViewController: UIViewController {
     }
     
     //---------------pageviewcontroller---------------------
-    
+
     func pageViewControllerSetting() {
         let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController.dataSource = generalViewModel
+        pageViewController.delegate = generalViewModel
         
         let startingViewController = ShowReviewViewController()
         let viewControllers = [startingViewController]
@@ -36,6 +37,13 @@ class MainBoardViewController: UIViewController {
         self.addChildViewController(pageViewController)
         self.view.addSubview(pageViewController.view!)
         pageViewController.didMoveToParentViewController(self)
+        
+        for i in pageViewController.view.subviews {
+            if i.isKindOfClass(UIScrollView) {
+                (i as! UIScrollView).delegate = generalViewModel
+            }
+        }
     }
     
+
 }
