@@ -78,8 +78,11 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
-        print("hoge")
         if sideMenuView == nil {
+            (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
+            UIApplication.sharedApplication().statusBarHidden = true
+            
+            
             sideMenuView = customDelegate?.edgeSwipeRight!(self)
             sideMenuView?.customDelegate = self
             self.addSubview(sideMenuView!)
@@ -89,6 +92,9 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     
     func sideMenuDidRemoveSelf() {
         sideMenuView = nil
+        
+        (self.superview?.superview as? UIScrollView)?.scrollEnabled = true
+        UIApplication.sharedApplication().statusBarHidden = false
     }
     
     //----- send event ------------

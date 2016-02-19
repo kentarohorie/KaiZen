@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B8s-QF-5oc">
-                    <rect key="frame" x="55" y="82" width="312" height="562"/>
+                    <rect key="frame" x="8" y="82" width="359" height="562"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-DC-ANA">
@@ -53,14 +53,14 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="yGi-bD-mbN" secondAttribute="bottom" constant="52" id="LTT-x6-i3G"/>
                 <constraint firstItem="QD3-DC-ANA" firstAttribute="trailing" secondItem="B8s-QF-5oc" secondAttribute="trailing" id="cGU-6S-A3j"/>
-                <constraint firstItem="B8s-QF-5oc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="47" id="d6P-39-ifn"/>
+                <constraint firstItem="B8s-QF-5oc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="d6P-39-ifn"/>
                 <constraint firstItem="B8s-QF-5oc" firstAttribute="top" secondItem="QD3-DC-ANA" secondAttribute="bottom" constant="8" symbolic="YES" id="e1k-dv-4l3"/>
-                <constraint firstItem="0cw-Hd-Pzr" firstAttribute="leading" secondItem="B8s-QF-5oc" secondAttribute="leading" constant="-47" id="fcc-Nk-ntp"/>
+                <constraint firstItem="0cw-Hd-Pzr" firstAttribute="leading" secondItem="B8s-QF-5oc" secondAttribute="leading" id="fcc-Nk-ntp"/>
                 <constraint firstItem="B8s-QF-5oc" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="kCi-Nq-ren"/>
                 <constraint firstItem="0cw-Hd-Pzr" firstAttribute="baseline" secondItem="QD3-DC-ANA" secondAttribute="baseline" id="mqp-s8-3h5"/>
                 <constraint firstItem="QD3-DC-ANA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="t0E-yp-jIx"/>
                 <constraint firstAttribute="bottom" secondItem="B8s-QF-5oc" secondAttribute="bottom" constant="23" id="wJw-Pd-2rl"/>
-                <constraint firstItem="B8s-QF-5oc" firstAttribute="centerX" secondItem="yGi-bD-mbN" secondAttribute="centerX" constant="23.5" id="xFI-ck-Aen"/>
+                <constraint firstItem="B8s-QF-5oc" firstAttribute="centerX" secondItem="yGi-bD-mbN" secondAttribute="centerX" id="xFI-ck-Aen"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>

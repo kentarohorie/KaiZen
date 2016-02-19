@@ -14,22 +14,49 @@ import UIKit
 
 class SideMenuView: UIView {
 
+    @IBOutlet weak var sideMenuTableView: UITableView!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
+    
     var baseView: UIView!
     weak var customDelegate: SideMenuViewDelegate?
-    var coverView: UIView = UIView()
+    let coverView: UIView = UIView()
+    let sideMenuViewModel: SideMenuViewModel = SideMenuViewModel()
     
     override func awakeFromNib() {
-        self.backgroundColor = UIColor.yellowColor()
         selfSetting()
     }
     
     func selfSetting() {
         self.hidden = true
         coverView.backgroundColor = UIColor.clearColor()
-        self.backgroundColor = UIColor.clearColor()
         
         let tapGestureRecog = UITapGestureRecognizer(target: self, action: "removeSideMenu")
         coverView.addGestureRecognizer(tapGestureRecog)
+        
+        let swipeLeftGestureRecog = UISwipeGestureRecognizer(target: self, action: "swipeLeft")
+        swipeLeftGestureRecog.direction = .Left
+        self.addGestureRecognizer(swipeLeftGestureRecog)
+        
+        tableViewSetting()
+    }
+    
+    func tableViewSetting() {
+        sideMenuTableView.registerNib(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "sideMenuCell")
+        sideMenuTableView.delegate = sideMenuViewModel
+        sideMenuTableView.dataSource = sideMenuViewModel
+        
+        sideMenuTableView.backgroundColor = self.backgroundColor
+        
+    }
+    
+    func buttonSetting() {
+        plusButton.layer.borderColor = UIColor.whiteColor().CGColor
+        plusButton.layer.borderWidth = 0.6
+        
+        minusButton.layer.borderColor = UIColor.whiteColor().CGColor
+        minusButton.layer.borderWidth = 0.6
+        
     }
     
     func framingFromSuperView(baseView: UIView) {
@@ -57,6 +84,20 @@ class SideMenuView: UIView {
     }
     
     func removeSideMenu() {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.frame.origin.x = -(self.baseView.frame.width)
+            self.coverView.frame.origin = CGPoint(x: self.frame.width - self.baseView.frame.width, y: 0)
+            self.coverView.backgroundColor = UIColor.clearColor()
+            }) { (bool) -> Void in
+                self.removeFromSuperview()
+                guard let delegate = self.customDelegate else {
+                    return
+                }
+                delegate.sideMenuDidRemoveSelf!()
+        }
+    }
+    
+    func swipeLeft() {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.frame.origin.x = -(self.baseView.frame.width)
             self.coverView.backgroundColor = UIColor.clearColor()

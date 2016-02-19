@@ -8,22 +8,67 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SideMenuView" customModule="KaiZen" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-PL-80q">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="50" width="380" height="547"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KaiZen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-1h-FYP">
+                    <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
+                    <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="gt7-Fv-rcb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJc-gd-1G5">
+                    <rect key="frame" x="0.0" y="597" width="190" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="yoA-0o-h6J"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkS-Qr-8Ef">
+                    <rect key="frame" x="190" y="597" width="190" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="eZ5-UK-pWH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <state key="normal" title="-">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="dnx-PL-80q" secondAttribute="trailing" id="HwX-Xa-7ao"/>
-                <constraint firstAttribute="bottom" secondItem="dnx-PL-80q" secondAttribute="bottom" id="bVS-xG-pdP"/>
-                <constraint firstItem="dnx-PL-80q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rnA-8q-Xao"/>
-                <constraint firstItem="dnx-PL-80q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vYH-F9-O5l"/>
+                <constraint firstAttribute="trailing" secondItem="ZkS-Qr-8Ef" secondAttribute="trailing" id="Byp-4r-ilo"/>
+                <constraint firstItem="LNT-1h-FYP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Df9-MM-Xtl"/>
+                <constraint firstItem="KJc-gd-1G5" firstAttribute="top" secondItem="dnx-PL-80q" secondAttribute="bottom" id="EXP-EL-OfK"/>
+                <constraint firstItem="ZkS-Qr-8Ef" firstAttribute="width" secondItem="KJc-gd-1G5" secondAttribute="width" id="KST-Cg-jur"/>
+                <constraint firstAttribute="trailing" secondItem="LNT-1h-FYP" secondAttribute="trailing" id="LtD-ci-htH"/>
+                <constraint firstAttribute="bottom" secondItem="ZkS-Qr-8Ef" secondAttribute="bottom" id="ND1-7i-BHM"/>
+                <constraint firstItem="KJc-gd-1G5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vf2-rp-DXe"/>
+                <constraint firstItem="LNT-1h-FYP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a4N-4m-PIh"/>
+                <constraint firstItem="ZkS-Qr-8Ef" firstAttribute="leading" secondItem="KJc-gd-1G5" secondAttribute="trailing" id="dPx-K8-FmJ"/>
+                <constraint firstItem="dnx-PL-80q" firstAttribute="top" secondItem="LNT-1h-FYP" secondAttribute="bottom" id="n4A-vM-2Hs"/>
+                <constraint firstAttribute="trailing" secondItem="dnx-PL-80q" secondAttribute="trailing" id="pNJ-nJ-Zt0"/>
+                <constraint firstAttribute="bottom" secondItem="KJc-gd-1G5" secondAttribute="bottom" id="t54-5m-wqW"/>
+                <constraint firstItem="ZkS-Qr-8Ef" firstAttribute="leading" secondItem="KJc-gd-1G5" secondAttribute="trailing" id="ujq-XB-yro"/>
+                <constraint firstItem="dnx-PL-80q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xxy-Tb-gGv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="minusButton" destination="ZkS-Qr-8Ef" id="7Yy-zC-uLv"/>
+                <outlet property="plusButton" destination="KJc-gd-1G5" id="NTi-eO-ptb"/>
+                <outlet property="sideMenuTableView" destination="dnx-PL-80q" id="90i-Xp-KMH"/>
+            </connections>
             <point key="canvasLocation" x="475.5" y="420.5"/>
         </view>
     </objects>
