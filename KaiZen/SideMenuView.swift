@@ -12,7 +12,7 @@ import UIKit
     optional func sideMenuDidRemoveSelf()
 }
 
-class SideMenuView: UIView {
+class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var sideMenuTableView: UITableView!
     @IBOutlet weak var plusButton: UIButton!
@@ -21,7 +21,6 @@ class SideMenuView: UIView {
     var baseView: UIView!
     weak var customDelegate: SideMenuViewDelegate?
     let coverView: UIView = UIView()
-    let sideMenuViewModel: SideMenuViewModel = SideMenuViewModel()
     
     override func awakeFromNib() {
         selfSetting()
@@ -33,6 +32,10 @@ class SideMenuView: UIView {
         
         let tapGestureRecog = UITapGestureRecognizer(target: self, action: "removeSideMenu")
         coverView.addGestureRecognizer(tapGestureRecog)
+        let coverViewSwileLeftGestureRecog = UISwipeGestureRecognizer(target: self, action: "swipeLeft")
+        coverViewSwileLeftGestureRecog.direction = .Left
+        coverView.addGestureRecognizer(coverViewSwileLeftGestureRecog)
+
         
         let swipeLeftGestureRecog = UISwipeGestureRecognizer(target: self, action: "swipeLeft")
         swipeLeftGestureRecog.direction = .Left
@@ -43,10 +46,10 @@ class SideMenuView: UIView {
     
     func tableViewSetting() {
         sideMenuTableView.registerNib(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "sideMenuCell")
-        sideMenuTableView.delegate = sideMenuViewModel
-        sideMenuTableView.dataSource = sideMenuViewModel
+        sideMenuTableView.delegate = self
+        sideMenuTableView.dataSource = self
         
-        sideMenuTableView.backgroundColor = self.backgroundColor
+        sideMenuTableView.backgroundColor = UIColor.clearColor()
         
     }
     
@@ -58,6 +61,8 @@ class SideMenuView: UIView {
         minusButton.layer.borderWidth = 0.6
         
     }
+    
+    //------------ action -----------------
     
     func framingFromSuperView(baseView: UIView) {
         self.baseView = baseView
@@ -79,7 +84,7 @@ class SideMenuView: UIView {
             
             self.coverView.frame.origin.x = self.frame.width
             self.coverView.frame.size = CGSize(width: self.baseView.frame.width - self.frame.width, height: self.baseView.frame.height)
-            self.coverView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            self.coverView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
         }
     }
     
@@ -100,6 +105,7 @@ class SideMenuView: UIView {
     func swipeLeft() {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.frame.origin.x = -(self.baseView.frame.width)
+            self.coverView.frame.origin = CGPoint(x: self.frame.width - self.baseView.frame.width, y: 0)
             self.coverView.backgroundColor = UIColor.clearColor()
             }) { (bool) -> Void in
                 self.removeFromSuperview()
@@ -107,6 +113,43 @@ class SideMenuView: UIView {
                     return
                 }
                 delegate.sideMenuDidRemoveSelf!()
+        }
+    }
+    
+    //----------- tableView datasource --------------
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("sideMenuCell") as! SideMenuTableViewCell
+        
+        cell.selectionStyle = .None
+        cell.isSelectView.backgroundColor = UIColor.clearColor()
+        
+        return cell
+    }
+    
+    //------------ tableView delegate --------------
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let didSelectCell = tableView.cellForRowAtIndexPath(indexPath) as! SideMenuTableViewCell
+        UIView.animateWithDuration(0.2) { () -> Void in
+            didSelectCell.isSelectView.backgroundColor = UIColor.clearColor()
+        }
+        
+
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! SideMenuTableViewCell
+        UIView.animateWithDuration(0.2) { () -> Void in
+            selectedCell.isSelectView.backgroundColor = UIColor(red: 2/255, green: 168/255, blue: 243/255, alpha: 1)
         }
     }
     
