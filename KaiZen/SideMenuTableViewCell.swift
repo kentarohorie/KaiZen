@@ -10,15 +10,23 @@ import UIKit
 
 class SideMenuTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var isSelectView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        selfSetting()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func selfSetting() {
+        self.backgroundColor = UIColor.clearColor()
     }
     
 }
