@@ -21,6 +21,8 @@
 		AA1AEB831C6A395900C70138 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB821C6A395900C70138 /* AddReviewView.swift */; };
 		AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB841C6AF9E400C70138 /* ChartView.swift */; };
 		AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AEB861C6AF9EF00C70138 /* ChartView.xib */; };
+		AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA28E14D1C744ACC0073453F /* SideMenuView.xib */; };
+		AA28E1501C744AE90073453F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28E14F1C744AE90073453F /* SideMenuView.swift */; };
 		AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46311C4740D600A9F288 /* AppDelegate.swift */; };
 		AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46351C4740D600A9F288 /* Main.storyboard */; };
 		AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46381C4740D600A9F288 /* KaiZen.xcdatamodeld */; };
@@ -31,6 +33,8 @@
 		AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */; };
 		AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */; };
 		AA3A46721C48EF3800A9F288 /* show.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46711C48EF3800A9F288 /* show.png */; };
+		AA3F390C1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F390A1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift */; };
+		AA3F390D1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3F390B1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib */; };
 		AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87A0591C6C24D100560495 /* GeneralViewModel.swift */; };
 		AAA76AD81C4F7D70006184E8 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA76AD71C4F7D70006184E8 /* ball.png */; };
 		AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */; };
@@ -52,6 +56,8 @@
 		AA1AEB821C6A395900C70138 /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		AA1AEB841C6AF9E400C70138 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		AA1AEB861C6AF9EF00C70138 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		AA28E14D1C744ACC0073453F /* SideMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuView.xib; sourceTree = "<group>"; };
+		AA28E14F1C744AE90073453F /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		AA3A462E1C4740D600A9F288 /* KaiZen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaiZen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A46311C4740D600A9F288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A46361C4740D600A9F288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 		AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheetManager.swift; sourceTree = "<group>"; };
 		AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReviewViewController.swift; sourceTree = "<group>"; };
 		AA3A46711C48EF3800A9F288 /* show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show.png; sourceTree = "<group>"; };
+		AA3F390A1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		AA3F390B1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		AA87A0591C6C24D100560495 /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		AAA76AD71C4F7D70006184E8 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +161,14 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		AA28E14C1C744AA80073453F /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AA3F390E1C76BAEA00ED0B33 /* View */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		AA3A46251C4740D600A9F288 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +219,7 @@
 		AA3A46471C474A1000A9F288 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AA28E14C1C744AA80073453F /* SideMenu */,
 				AA3A464C1C474BAC00A9F288 /* ShowReview */,
 				AA04D51A1C5621C3009BD0A8 /* ShowChart */,
 			);
@@ -289,6 +306,17 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		AA3F390E1C76BAEA00ED0B33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA28E14F1C744AE90073453F /* SideMenuView.swift */,
+				AA28E14D1C744ACC0073453F /* SideMenuView.xib */,
+				AA3F390A1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift */,
+				AA3F390B1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		AA87A0581C6C247900560495 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,8 +387,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */,
 				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
 				AA3A46721C48EF3800A9F288 /* show.png in Resources */,
+				AA3F390D1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib in Resources */,
 				AA01170A1C70424F00843BA1 /* NoGraphDataView.xib in Resources */,
 				AA0F0DE51C690C5E00815833 /* ReviewSheatTableViewCell.xib in Resources */,
 				AA0F0DDF1C69094700815833 /* ReviewSheatView.xib in Resources */,
@@ -428,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */,
+				AA28E1501C744AE90073453F /* SideMenuView.swift in Sources */,
 				AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */,
 				AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */,
 				AA3A46321C4740D600A9F288 /* AppDelegate.swift in Sources */,
@@ -441,6 +472,7 @@
 				AA1AEB831C6A395900C70138 /* AddReviewView.swift in Sources */,
 				AA0F0DDD1C6908FC00815833 /* ReviewSheatView.swift in Sources */,
 				AA3A46541C474C2D00A9F288 /* Review.swift in Sources */,
+				AA3F390C1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift in Sources */,
 				AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */,
 				AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */,
 			);

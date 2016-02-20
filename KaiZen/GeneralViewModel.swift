@@ -8,8 +8,45 @@
 
 import UIKit
 
-class GeneralViewModel: NSObject, UIPageViewControllerDataSource {
+class GeneralViewModel: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
+    
+    
+    //--------- scroll setting --------------
+    
+    var isSecond = false
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else {
+            return
+        }
         
+        if NSStringFromClass(previousViewControllers[0].dynamicType).componentsSeparatedByString(".").last! == "ShowChartViewController" {
+                isSecond = false
+
+        } else {
+                isSecond = true
+        }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let panTranslation = scrollView.panGestureRecognizer.translationInView(scrollView.superview).x
+        
+        if scrollView.panGestureRecognizer.numberOfTouches() >= 2 {
+            scrollView.scrollEnabled = false
+        } else {
+            scrollView.scrollEnabled = true
+        }
+        
+        if panTranslation > 0 && scrollView.contentOffset.x <= 400 && !(isSecond) {
+            scrollView.contentOffset.x = 375
+        } else if panTranslation < 0 && scrollView.contentOffset.x >= 350 && isSecond {
+            scrollView.contentOffset.x = 375
+        }
+    }
+    
+    //--------- pageviewcontroller data --------------
+    
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let className = NSStringFromClass(viewController.dynamicType).componentsSeparatedByString(".").last!
         if className == "ShowChartViewController" {
@@ -36,6 +73,4 @@ class GeneralViewModel: NSObject, UIPageViewControllerDataSource {
             return nil
         }
     }
-
-
 }
