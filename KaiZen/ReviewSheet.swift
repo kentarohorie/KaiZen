@@ -8,8 +8,19 @@
 
 import UIKit
 
-class ReviewSheet {    
-    var reviewArray: [Review] = []
+class ReviewSheet {
     var title: String?
-    var pointRatio: [Float]?
+    var reviewArray: [Review] = []
+    var pointRatioArray: [Float] = []
+    
+    func appendPointRatio(reviewArray: [Review]) {
+        var reviewPointSum = 0
+        for review in reviewArray {
+            reviewPointSum += review.reviewPoint!
+        }
+        
+        let ratio = Float(reviewPointSum) / Float(reviewArray.count * 2)
+        pointRatioArray.append(ratio)
+    }
+    
 }

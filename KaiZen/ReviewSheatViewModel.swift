@@ -10,12 +10,13 @@ import UIKit
 
 @objc protocol ReviewSheatViewModelDelegate {
     func changeTableViewDate()
+    func isDataAlert(bool: Bool)
 }
 
 class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate, ReviewSheatTableViewCellDelegate, ReviewSheatViewDelegate, AddReviewViewDelegate, ShowReviewViewControllerDelegate, SideMenuViewDelegate {
     
     let reviewSheetManager: ReviewSheetManager = ReviewSheetManager.sharedInstance
-    var reviewSheet: ReviewSheet = ReviewSheet()
+    var reviewSheetTmp = ReviewSheet()
     weak var customDelegate: ReviewSheatViewModelDelegate?
     var isTapEdit: Bool = true
     
@@ -26,10 +27,14 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         let tableView = cell.superview?.superview as! UITableView
         let row = tableView.indexPathForCell(cell)?.row
         
-        reviewSheet.reviewArray[row!].reviewPoint = sender.selectedSegmentIndex
+        reviewSheetTmp.reviewArray[row!].reviewPoint = sender.selectedSegmentIndex
     }
     
-    func tapAddReview() -> AddReviewView {
+    func tapAddReview() -> AddReviewView? {
+        guard reviewSheetManager.currentReviewSheet != nil else {
+            return nil
+        }
+        
         let addReviewView = UINib(nibName: "AddReviewView", bundle: nil).instantiateWithOwner(self, options: nil).first as! AddReviewView
         addReviewView.customDelegate = self
         
@@ -37,7 +42,6 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tapEdit(tableView: UITableView, callback: () -> Void) {
-        print("edit...")
         if isTapEdit {
             tableView.setEditing(true, animated: true)
             isTapEdit = false
@@ -50,43 +54,39 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func tapAddOfAddView(text: String) {
         let review = Review()
-        review.reviewPoint = 0
-        review.reviewText = text
+        review.set(text, reviewPoint: 0)
 
-        reviewSheet.reviewArray.append(review)
+        reviewSheetTmp.reviewArray.append(review)
         customDelegate?.changeTableViewDate()
-        ReviewSheetManager.saveForDevise()///////////
+//        ReviewSheetManager.saveForDevise()///////////
     }
     
     func tapDone(tableView: UITableView) {
-        let appendReviewSheet = ReviewSheet()
-        
-        for review in reviewSheet.reviewArray {
-            let appendReview = Review()
-            appendReview.reviewPoint = review.reviewPoint
-            appendReview.reviewText = review.reviewText
-            appendReviewSheet.reviewArray.append(appendReview)
+//        ReviewSheetManager.saveForDevise()//////////
+        guard reviewSheetTmp.reviewArray.count != 0 else {
+            customDelegate?.isDataAlert(false)
+            return
         }
         
-        reviewSheetManager.reviewSheetArray.append(appendReviewSheet)
-        ReviewSheetManager.saveForDevise()//////////
+        reviewSheetTmp.appendPointRatio(reviewSheetTmp.reviewArray)
         tableView.reloadData()
+        customDelegate?.isDataAlert(true)
     }
     
-    func viewDidLoad(callback: () -> Void) {
-        ReviewSheetManager.fetchFromDevise { () -> Void in
-            if self.reviewSheetManager.reviewSheetArray.count != 0 {
-                for modelReview in (self.reviewSheetManager.reviewSheetArray.last?.reviewArray)! {
-                    let review = Review()
-                    review.reviewText = modelReview.reviewText
-                    
-                    self.reviewSheet.reviewArray.append(review)
-                }
-            }
-            
-            callback()
-        }
-    }
+//    func viewDidLoad(callback: () -> Void) {
+//        ReviewSheetManager.fetchFromDevise { () -> Void in
+//            if self.reviewSheetManager.reviewSheetArray.count != 0 {
+//                for modelReview in (self.reviewSheetManager.reviewSheetArray.last?.reviewArray)! {
+//                    let review = Review()
+//                    review.reviewText = modelReview.reviewText
+//                    
+//                    self.reviewSheet.reviewArray.append(review)
+//                }
+//            }
+//            
+//            callback()
+//        }
+//    }
     
     func edgeSwipeRight(superView: UIView) -> SideMenuView {
         let sideMenuView = UINib(nibName: "SideMenuView", bundle: nil).instantiateWithOwner(self, options: nil).first as! SideMenuView
@@ -99,13 +99,21 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     
     //------------ OPERATE FOR SIDEMENU ---------------
     
-    func sideMenuDidPlus() {
+    func sideMenuDidPlus(sheetName: String) {
         let reviewSheet = ReviewSheet()
+        reviewSheet.title = sheetName
         
+        reviewSheetManager.reviewSheetArray.append(reviewSheet)
     }
     
     func sideMenuDidMinus() {
 
+    }
+    
+    func sideMenuCellDidSelect(row: Int) {
+        reviewSheetTmp = reviewSheetManager.reviewSheetArray[row]
+        customDelegate?.changeTableViewDate()
+        reviewSheetManager.currentReviewSheet = reviewSheetTmp
     }
     
     
@@ -114,14 +122,14 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ReviewSheatTableViewCell") as! ReviewSheatTableViewCell
         cell.customDelegate = self
-        cell.reviewTextLabel.text = reviewSheet.reviewArray[indexPath.row].reviewText
+        cell.reviewTextLabel.text = reviewSheetTmp.reviewArray[indexPath.row].reviewText
         cell.gradeSegmentedControl.selectedSegmentIndex = 0
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviewSheet.reviewArray.count
+        return reviewSheetTmp.reviewArray.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -137,7 +145,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
             for reviewSheet in reviewSheetManager.reviewSheetArray {
                 reviewSheet.reviewArray.removeAtIndex(indexPath.row)
             }
-            reviewSheet.reviewArray.removeAtIndex(indexPath.row)
+            reviewSheetTmp.reviewArray.removeAtIndex(indexPath.row)
             tableView.reloadData()
             ReviewSheetManager.saveForDevise()
         }

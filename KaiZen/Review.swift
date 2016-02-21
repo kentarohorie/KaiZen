@@ -8,7 +8,12 @@
 
 import UIKit
 
-class Review{
+class Review {
     var reviewText: String?
     var reviewPoint: Int?
+    
+    func set(reviewText: String, reviewPoint: Int) {
+        self.reviewText = reviewText
+        self.reviewPoint = reviewPoint
+    }
 }

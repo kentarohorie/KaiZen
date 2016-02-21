@@ -21,11 +21,12 @@ class ShowReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.customDelegate = reviewSheatViewModel
-        customDelegate?.viewDidLoad!({ () -> Void in
-            self.reviewSheatViewSetUP()
-
-        })
+//        self.customDelegate = reviewSheatViewModel
+//        customDelegate?.viewDidLoad!({ () -> Void in
+//            self.reviewSheatViewSetUP()
+//
+//        })
+        reviewSheatViewSetUP()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +40,6 @@ class ShowReviewViewController: UIViewController {
         reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatView.tableView.delegate = reviewSheatViewModel
         reviewSheatViewModel.customDelegate = reviewSheatView
-//        reviewSheatView.sideMenuView?.customDelegate = reviewSheatViewModel
         
         self.view = reviewSheatView
     }
