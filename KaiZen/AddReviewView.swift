@@ -10,7 +10,6 @@ import UIKit
 
 @objc protocol AddReviewViewDelegate {
     optional func tapAddOfAddView(text: String)
-    optional func reviewViewAlert()
 }
 
 class AddReviewView: UIView, UITextFieldDelegate {
@@ -32,47 +31,55 @@ class AddReviewView: UIView, UITextFieldDelegate {
         textField.delegate = self
     }
     
-    //----- event ------------
-
-    @IBAction func tapAdd(sender: UIButton) {
-        guard textField.text! != "" else {
-            let alertController = UIAlertController(title: "Missing!", message: "テキストを入力してください。", preferredStyle: .Alert)
-            let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(OKAction)
-            
-            
-            var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
-            while ((baseView?.presentedViewController) != nil)  {
-                baseView = baseView?.presentedViewController
-            }
+    // ---- method ----
     
-            baseView?.presentViewController(alertController, animated: true, completion: nil)
-
-            return
-        }
-
-        self.customDelegate?.tapAddOfAddView!(textField.text!)
-        
+    func closeAnimation() {
         UIView.animateWithDuration(0.8, animations: { () -> Void in
             self.center.y = -(self.frame.height)
             }) { (bool) -> Void in
                 self.removeFromSuperview()
         }
-        
-        textField.resignFirstResponder()
     }
     
-    @IBAction func tapClose(sender: UIButton) {
-        UIView.animateWithDuration(0.8, animations: { () -> Void in
-            self.center.y = -(self.frame.height)
-            }) { (bool) -> Void in
-                self.removeFromSuperview()
+    func setAlert() {
+        let alertController = UIAlertController(title: "Missing!", message: "テキストを入力してください。", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKAction)
+        
+        
+        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while ((baseView?.presentedViewController) != nil)  {
+            baseView = baseView?.presentedViewController
         }
+        
+        baseView?.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
+    //----- receive event ------------
+
+    @IBAction func tapAdd(sender: UIButton) {
+        guard textField.text! != "" else {
+            setAlert()
+            return
+        }
+
+        self.customDelegate?.tapAddOfAddView!(textField.text!)
+        closeAnimation()
+        textField.resignFirstResponder()
+    }
+    
+    @IBAction func tapClose(sender: UIButton) {
+        closeAnimation()
+    }
+    
+    
+    // --------- send event ------------
+    
+
     
 }

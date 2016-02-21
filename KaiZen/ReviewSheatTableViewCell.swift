@@ -20,7 +20,6 @@ class ReviewSheatTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setUP()
     }
 
@@ -28,7 +27,7 @@ class ReviewSheatTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    //------ set view -------------
+    // ------ set view -------------
     
     func setUP() {
         self.layer.borderWidth = 0.6
@@ -38,7 +37,7 @@ class ReviewSheatTableViewCell: UITableViewCell {
         gradeSegmentedControl.addTarget(self, action: "changeSegConValue:", forControlEvents: .ValueChanged)
     }
     
-    //-------- event ----------
+    // -------- receive event ----------
     
     func changeSegConValue(sender: UISegmentedControl) {
         customDelegate?.changeSegConValue(sender)
