@@ -55,7 +55,7 @@ class ChartView: UIView {
         label.frame.size = CGSize(width: self.frame.width, height: self.frame.height / 7 - 4)
         label.frame.origin = CGPointZero
         label.backgroundColor = graphView.colorBottom
-        label.text = "成長曲線"
+        label.text = "改善曲線"
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         
