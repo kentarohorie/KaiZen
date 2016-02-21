@@ -10,6 +10,8 @@ import UIKit
 
 @objc protocol SideMenuViewDelegate {
     optional func sideMenuDidRemoveSelf()
+    optional func sideMenuDidPlus()
+    optional func sideMenuDidMinus()
 }
 
 class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate {
@@ -17,6 +19,7 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var sideMenuTableView: UITableView!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
+    let reviewSheetManager = ReviewSheetManager.sharedInstance
     
     var baseView: UIView!
     weak var customDelegate: SideMenuViewDelegate?
@@ -94,11 +97,14 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate {
             self.coverView.frame.origin = CGPoint(x: self.frame.width - self.baseView.frame.width, y: 0)
             self.coverView.backgroundColor = UIColor.clearColor()
             }) { (bool) -> Void in
+                (self.superview?.superview?.superview as? UIScrollView)?.scrollEnabled = true
+                UIApplication.sharedApplication().statusBarHidden = false
+
                 self.removeFromSuperview()
                 guard let delegate = self.customDelegate else {
                     return
                 }
-                delegate.sideMenuDidRemoveSelf!()
+//                delegate.sideMenuDidRemoveSelf!())
         }
     }
     
@@ -108,18 +114,38 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate {
             self.coverView.frame.origin = CGPoint(x: self.frame.width - self.baseView.frame.width, y: 0)
             self.coverView.backgroundColor = UIColor.clearColor()
             }) { (bool) -> Void in
+                (self.superview?.superview?.superview as? UIScrollView)?.scrollEnabled = true
+                UIApplication.sharedApplication().statusBarHidden = false
+                
                 self.removeFromSuperview()
                 guard let delegate = self.customDelegate else {
                     return
                 }
-                delegate.sideMenuDidRemoveSelf!()
+                
+//                delegate.sideMenuDidRemoveSelf!()
+
+
         }
+    }
+    
+    @IBAction func tapPlusButton(sender: UIButton) {
+        guard let delegate = customDelegate else {
+            return
+        }
+        delegate.sideMenuDidPlus!()
+    }
+    
+    @IBAction func tapMinusButton(sender: UIButton) {
+        guard let delegate = customDelegate else {
+            return
+        }
+        delegate.sideMenuDidMinus!()
     }
     
     //----------- tableView datasource --------------
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return reviewSheetManager.reviewSheetArray.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

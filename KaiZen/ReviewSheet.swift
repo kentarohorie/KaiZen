@@ -10,4 +10,6 @@ import UIKit
 
 class ReviewSheet {    
     var reviewArray: [Review] = []
+    var title: String?
+    var pointRatio: [Float]?
 }

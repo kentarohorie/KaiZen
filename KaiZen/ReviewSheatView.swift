@@ -15,7 +15,7 @@ import UIKit
     optional func edgeSwipeRight(superView: UIView) -> SideMenuView
 }
 
-class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate, SideMenuViewDelegate {
+class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -78,25 +78,17 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
-        if sideMenuView == nil {
+        if sender.state == .Began {
             (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
             UIApplication.sharedApplication().statusBarHidden = true
             
             
             sideMenuView = customDelegate?.edgeSwipeRight!(self)
-            sideMenuView?.customDelegate = self
             self.addSubview(sideMenuView!)
             sideMenuView?.appearSideMenu()
         }
     }
-    
-    func sideMenuDidRemoveSelf() {
-        sideMenuView = nil
         
-        (self.superview?.superview as? UIScrollView)?.scrollEnabled = true
-        UIApplication.sharedApplication().statusBarHidden = false
-    }
-    
     //----- send event ------------
     
     func changeTableViewDate() {

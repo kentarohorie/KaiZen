@@ -12,7 +12,7 @@ import UIKit
     func changeTableViewDate()
 }
 
-class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate, ReviewSheatTableViewCellDelegate, ReviewSheatViewDelegate, AddReviewViewDelegate, ShowReviewViewControllerDelegate {
+class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate, ReviewSheatTableViewCellDelegate, ReviewSheatViewDelegate, AddReviewViewDelegate, ShowReviewViewControllerDelegate, SideMenuViewDelegate {
     
     let reviewSheetManager: ReviewSheetManager = ReviewSheetManager.sharedInstance
     var reviewSheet: ReviewSheet = ReviewSheet()
@@ -91,13 +91,25 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     func edgeSwipeRight(superView: UIView) -> SideMenuView {
         let sideMenuView = UINib(nibName: "SideMenuView", bundle: nil).instantiateWithOwner(self, options: nil).first as! SideMenuView
         sideMenuView.framingFromSuperView(superView)
+        sideMenuView.customDelegate = self
         
         return sideMenuView
     }
     
     
+    //------------ OPERATE FOR SIDEMENU ---------------
     
-    //---------------tableViewSetting-----------------
+    func sideMenuDidPlus() {
+        let reviewSheet = ReviewSheet()
+        
+    }
+    
+    func sideMenuDidMinus() {
+
+    }
+    
+    
+    //--------------- tableViewSetting -----------------
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ReviewSheatTableViewCell") as! ReviewSheatTableViewCell

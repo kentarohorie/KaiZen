@@ -39,6 +39,7 @@ class ShowReviewViewController: UIViewController {
         reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatView.tableView.delegate = reviewSheatViewModel
         reviewSheatViewModel.customDelegate = reviewSheatView
+//        reviewSheatView.sideMenuView?.customDelegate = reviewSheatViewModel
         
         self.view = reviewSheatView
     }
