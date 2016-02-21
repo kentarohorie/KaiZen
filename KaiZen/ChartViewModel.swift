@@ -12,17 +12,25 @@ class ChartViewModel: NSObject, BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDa
     
     let reviewSheetManager: ReviewSheetManager = ReviewSheetManager.sharedInstance
 
-    // dataが２個以上じゃないとview事態が崩れる
+    func isNoData() -> Bool {
+
+
+        return (self.reviewSheetManager.currentReviewSheet?.pointRatioArray.count != nil) && (self.reviewSheetManager.currentReviewSheet?.pointRatioArray.count != 0)
+    }
+    
+    //------------ bem graph --------------
+    
+    // dataが２個以上じゃないとview事態が崩れてクラッシュする
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> NSInteger {
 
-        return reviewSheetManager.reviewSheetArray.count + 1
+        return reviewSheetManager.currentReviewSheet!.pointRatioArray.count + 1
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: NSInteger) -> CGFloat {
         if index == 0 {
             return 0
         } else {
-            return CGFloat(reviewSheetManager.sumReviewPoint(reviewSheetManager.reviewSheetArray[index - 1]))
+            return CGFloat(reviewSheetManager.currentReviewSheet!.pointRatioArray[index - 1])
         }
     }
     
