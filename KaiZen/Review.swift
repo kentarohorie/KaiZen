@@ -10,7 +10,7 @@ import UIKit
 
 class Review {
     var reviewText: String?
-    var reviewPoint: Int?
+    var reviewPoint: Int = 0
     
     func set(reviewText: String, reviewPoint: Int) {
         self.reviewText = reviewText
