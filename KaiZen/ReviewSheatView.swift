@@ -26,6 +26,8 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     weak var customDelegate: ReviewSheatViewDelegate?
     var addReviewView: AddReviewView?
     var sideMenuView: SideMenuView?
+    var isDisplaySideMenu: Bool = false
+    var isDisplayAddView: Bool = false
     
     override func awakeFromNib() {
         setUP()
@@ -96,12 +98,16 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     @IBAction func tapAddReview(sender: UIButton) {
-        guard let addView = customDelegate?.tapAddReview!() else {
+        guard let addView = customDelegate?.tapAddReview?() else {
             setAlert("まずシートを作りましょう")
             return
         }
         
-        setAddView(addView)
+        if !(isDisplayAddView) {
+            setAddView(addView)
+            isDisplayAddView = true
+        }
+        
     }
     
     @IBAction func tapDone(sender: UIButton) {
@@ -110,7 +116,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
-        if sender.state == .Began {
+        if sender.state == .Began && !(isDisplaySideMenu) {
             (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
             UIApplication.sharedApplication().statusBarHidden = true
             
@@ -118,6 +124,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
             sideMenuView = customDelegate?.edgeSwipeRight!(self)
             self.addSubview(sideMenuView!)
             sideMenuView?.appearSideMenu()
+            isDisplaySideMenu = true
         }
     }
         

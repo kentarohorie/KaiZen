@@ -34,6 +34,7 @@ class AddReviewView: UIView, UITextFieldDelegate {
     // ---- method ----
     
     func closeAnimation() {
+        (self.superview as? ReviewSheatView)?.isDisplayAddView = false
         UIView.animateWithDuration(0.8, animations: { () -> Void in
             self.center.y = -(self.frame.height)
             }) { (bool) -> Void in
