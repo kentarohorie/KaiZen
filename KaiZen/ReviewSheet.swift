@@ -16,11 +16,33 @@ class ReviewSheet {
     func appendPointRatio(reviewArray: [Review]) {
         var reviewPointSum = 0
         for review in reviewArray {
-            reviewPointSum += review.reviewPoint!
+            reviewPointSum += review.reviewPoint
         }
         
         let ratio = Float(reviewPointSum) / Float(reviewArray.count * 2)
         pointRatioArray.append(ratio)
+    }
+    
+    func resetReviewPoint() {
+        for review in reviewArray {
+            review.reviewPoint = 0
+        }
+    }
+    
+    func getReviewTextArray() -> [String] {
+        var reviewTextArray: [String] = []
+        for review in reviewArray {
+            reviewTextArray.append(review.reviewText!)
+        }
+        return reviewTextArray
+    }
+    
+    func setReviewText(textArray: [String]) {
+        for text in textArray {
+            let review = Review()
+            review.reviewText = text
+            reviewArray.append(review)
+        }
     }
     
 }
