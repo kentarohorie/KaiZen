@@ -19,63 +19,74 @@ class ReviewSheetManager {
     //------------- save & fetch Devise --------------------
     
     class func saveForDevise() {
-        let saveReviewSheetArray = convertForSave()
+        let saveReviewSheetArray = convertSheetArrayForSave()
         
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(saveReviewSheetArray, forKey: "reviewSheetArray")
+        
+        if let currentSheet = sharedInstance.currentReviewSheet {
+            let saveCurrentReviewSheet = convertSheetToDic(currentSheet)
+            defaults.setObject(saveCurrentReviewSheet, forKey: "currentReviewSheet")
+        }
     }
     
     class func fetchFromDevise(callback: () -> Void ) {
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        guard let fetchReviewSheetArray = defaults.objectForKey("reviewSheetArray") as? Array<Array<Dictionary<String, AnyObject>>> else {
+        guard let fetchReviewSheetArray = defaults.objectForKey("reviewSheetArray") as? [[String: AnyObject]] else {
             print("fetch error")
-            
             callback()
             return
         }
         
         convertForFetch(fetchReviewSheetArray)
+        
+        if let fetchCurrentReviewSheet = defaults.objectForKey("currentReviewSheet") as? [String: AnyObject] {
+            sharedInstance.currentReviewSheet = convertDicToSheet(fetchCurrentReviewSheet)
+        }
+        
         callback()
     }
     
     //-------------------- convertData --------------
     
-    class func convertForSave() -> Array<Array<Dictionary<String, AnyObject>>> {
-        var saveReviewSheetArray: Array<Array<Dictionary<String, AnyObject>>> = []
-        
+    class func convertSheetArrayForSave() -> [[String: AnyObject]] {
+        var saveReviewSheetDicArray: [[String: AnyObject]] = []
+
         for reviewSheet in sharedInstance.reviewSheetArray {
-            var reviewDicArray: Array<Dictionary<String, AnyObject>> = []
-            
-            for review in reviewSheet.reviewArray {
-                var dic: Dictionary<String, AnyObject> = [:]
-                
-                dic["reviewText"] = review.reviewText
-                dic["reviewPoint"] = review.reviewPoint
-                
-                reviewDicArray.append(dic)
-            }
-            
-            saveReviewSheetArray.append(reviewDicArray)
+            saveReviewSheetDicArray.append(convertSheetToDic(reviewSheet))
         }
-        
-        return saveReviewSheetArray
+
+        return saveReviewSheetDicArray
     }
     
-    class func convertForFetch(fetchData: Array<Array<Dictionary<String, AnyObject>>>) {
-        for dicArray in fetchData {
-            let reviewSheet = ReviewSheet()
-            
-            for dic in dicArray {
-                let review = Review()
-                
-                review.reviewText = dic["reviewText"] as? String
-                review.reviewPoint = dic["reviewPoint"] as? Int
-                
-                reviewSheet.reviewArray.append(review)
-            }
-            
-            sharedInstance.reviewSheetArray.append(reviewSheet)
+    class func convertSheetToDic(reviewSheet: ReviewSheet) -> [String: AnyObject] {
+        var sheetDic: Dictionary<String, AnyObject> = [:]
+        
+        sheetDic["title"] = reviewSheet.title
+        sheetDic["pointRatioArray"] = reviewSheet.pointRatioArray
+        sheetDic["reviewTextArray"] = reviewSheet.getReviewTextArray()
+        
+        return sheetDic
+    }
+    
+    class func convertForFetch(fetchData: [[String: AnyObject]]) {
+        for dic in fetchData {
+            sharedInstance.reviewSheetArray.append(convertDicToSheet(dic))
         }
+    }
+    
+    class func convertDicToSheet(sheetDic: [String: AnyObject]) -> ReviewSheet {
+        let reviewSheet = ReviewSheet()
+        reviewSheet.title = sheetDic["title"] as? String
+        reviewSheet.pointRatioArray = (sheetDic["pointRatioArray"] as? [Float])!
+        
+        guard let reviewTextArray = sheetDic["reviewTextArray"] as? [String] else {
+            print("no review")
+            return reviewSheet
+        }
+        
+        reviewSheet.setReviewText(reviewTextArray)
+        return reviewSheet
     }
 }

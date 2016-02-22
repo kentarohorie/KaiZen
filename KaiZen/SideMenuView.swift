@@ -135,6 +135,12 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     }
     
     @IBAction func tapMinusButton(sender: UIButton) {
+//        if sender.selected {
+//            sideMenuTableView.setEditing(true, animated: true)
+//        } else {
+//            sideMenuTableView.setEditing(false, animated: true)
+//        }
+        
         guard let delegate = customDelegate else {
             return
         }
@@ -148,6 +154,15 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
         delegate.sideMenuDidPlus!(text)
         sideMenuTableView.reloadData() //callbackで
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //--------- likely modelview... ------------->>>
     
@@ -175,22 +190,34 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     //------------ tableView delegate --------------
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let didSelectCell = tableView.cellForRowAtIndexPath(indexPath) as! SideMenuTableViewCell
-        UIView.animateWithDuration(0.2) { () -> Void in
-            didSelectCell.isSelectView.backgroundColor = UIColor.clearColor()
-        }
+//        let didSelectCell = tableView.cellForRowAtIndexPath(indexPath) as! SideMenuTableViewCell
+//        UIView.animateWithDuration(0.2) { () -> Void in
+//            didSelectCell.isSelectView.backgroundColor = UIColor.clearColor()
+//        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! SideMenuTableViewCell
-        UIView.animateWithDuration(0.2) { () -> Void in
-            selectedCell.isSelectView.backgroundColor = UIColor(red: 2/255, green: 168/255, blue: 243/255, alpha: 1)
-        }
+//        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! SideMenuTableViewCell
+//        UIView.animateWithDuration(0.2) { () -> Void in
+//            selectedCell.isSelectView.backgroundColor = UIColor(red: 2/255, green: 168/255, blue: 243/255, alpha: 1)
+//        }
         guard let delegate = customDelegate else {
             return
         }
         delegate.sideMenuCellDidSelect!(indexPath.row)
         self.removeSideMenu()
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            reviewSheetManager.reviewSheetArray.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            //            ReviewSheetManager.saveForDevise() ///////
+        }
     }
     
 }

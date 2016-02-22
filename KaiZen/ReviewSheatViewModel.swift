@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol ReviewSheatViewModelDelegate {
     func changeTableViewDate()
+    func changeSheetTitle(title: String)
     func isDataAlert(bool: Bool)
 }
 
@@ -41,7 +42,11 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         return addReviewView
     }
     
-    func tapEdit(tableView: UITableView, callback: () -> Void) {
+    func tapEdit(tableView: UITableView, callback: (isEdit: Bool) -> Void) {
+        guard reviewSheetManager.currentReviewSheet != nil && reviewSheetTmp.reviewArray.count != 0 else {
+            callback(isEdit: false)
+            return
+        }
         if isTapEdit {
             tableView.setEditing(true, animated: true)
             isTapEdit = false
@@ -49,7 +54,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
             tableView.setEditing(false, animated: true)
             isTapEdit = true
         }
-        callback()
+        callback(isEdit: true)
     }
     
     func tapAddOfAddView(text: String) {
@@ -58,35 +63,29 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
 
         reviewSheetTmp.reviewArray.append(review)
         customDelegate?.changeTableViewDate()
-//        ReviewSheetManager.saveForDevise()///////////
+        ReviewSheetManager.saveForDevise()
     }
     
     func tapDone(tableView: UITableView) {
-//        ReviewSheetManager.saveForDevise()//////////
         guard reviewSheetTmp.reviewArray.count != 0 else {
             customDelegate?.isDataAlert(false)
             return
         }
-        
+
         reviewSheetTmp.appendPointRatio(reviewSheetTmp.reviewArray)
+        ReviewSheetManager.saveForDevise()
+        
+        reviewSheetTmp.resetReviewPoint()
         tableView.reloadData()
         customDelegate?.isDataAlert(true)
     }
     
-//    func viewDidLoad(callback: () -> Void) {
-//        ReviewSheetManager.fetchFromDevise { () -> Void in
-//            if self.reviewSheetManager.reviewSheetArray.count != 0 {
-//                for modelReview in (self.reviewSheetManager.reviewSheetArray.last?.reviewArray)! {
-//                    let review = Review()
-//                    review.reviewText = modelReview.reviewText
-//                    
-//                    self.reviewSheet.reviewArray.append(review)
-//                }
-//            }
-//            
-//            callback()
-//        }
-//    }
+    func viewDidLoad(callback: () -> Void) {
+        ReviewSheetManager.fetchFromDevise { () -> Void in
+            
+            callback()
+        }
+    }
     
     func edgeSwipeRight(superView: UIView) -> SideMenuView {
         let sideMenuView = UINib(nibName: "SideMenuView", bundle: nil).instantiateWithOwner(self, options: nil).first as! SideMenuView
@@ -97,6 +96,14 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     
+    func reviewSheetViewWillDisplay() {
+        guard let currentSheet = reviewSheetManager.currentReviewSheet else {
+            return
+        }
+        reviewSheetTmp = currentSheet
+        customDelegate?.changeTableViewDate()
+        customDelegate?.changeSheetTitle(reviewSheetTmp.title!)
+    }
     //------------ OPERATE FOR SIDEMENU ---------------
     
     func sideMenuDidPlus(sheetName: String) {
@@ -104,6 +111,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         reviewSheet.title = sheetName
         
         reviewSheetManager.reviewSheetArray.append(reviewSheet)
+        ReviewSheetManager.saveForDevise()
     }
     
     func sideMenuDidMinus() {
@@ -113,6 +121,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     func sideMenuCellDidSelect(row: Int) {
         reviewSheetTmp = reviewSheetManager.reviewSheetArray[row]
         customDelegate?.changeTableViewDate()
+        customDelegate?.changeSheetTitle(reviewSheetTmp.title!)
         reviewSheetManager.currentReviewSheet = reviewSheetTmp
     }
     
@@ -136,15 +145,12 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         return 60
     }
     
-//    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            for reviewSheet in reviewSheetManager.reviewSheetArray {
-                reviewSheet.reviewArray.removeAtIndex(indexPath.row)
-            }
             reviewSheetTmp.reviewArray.removeAtIndex(indexPath.row)
             tableView.reloadData()
             ReviewSheetManager.saveForDevise()

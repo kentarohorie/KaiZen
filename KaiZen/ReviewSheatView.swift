@@ -9,16 +9,18 @@
 import UIKit
 
 @objc protocol ReviewSheatViewDelegate {
-    optional func tapEdit(tableView: UITableView, callback: () -> Void)
+    optional func tapEdit(tableView: UITableView, callback: (isEdit: Bool) -> Void)
     optional func tapAddReview() -> AddReviewView?
     optional func tapDone(tableView: UITableView)
     optional func edgeSwipeRight(superView: UIView) -> SideMenuView
+    optional func reviewSheetViewWillDisplay()
 }
 
 
 
 class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var sheetTitleLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     weak var customDelegate: ReviewSheatViewDelegate?
@@ -34,7 +36,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     func setUP() {
         tableViewSetUP()
         setGesture()
-        
+
         self.bringSubviewToFront(doneButton)
         doneButton.layer.borderWidth = 0.6
         doneButton.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
@@ -84,7 +86,11 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     //---------receive event ------------------------
     
     @IBAction func tapEdit(sender: UIButton) {
-        customDelegate?.tapEdit!(tableView, callback: { () -> Void in
+        customDelegate?.tapEdit!(tableView, callback: { (bool) -> Void in
+            guard bool else {
+                self.setAlert("シートの設定、レビューの追加をしてください")
+                return
+            }
             self.tableView.reloadData()
         })
     }
@@ -100,6 +106,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     
     @IBAction func tapDone(sender: UIButton) {
         customDelegate?.tapDone!(tableView)
+        
     }
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
@@ -127,4 +134,13 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
             setAlert("レビューを追加してください")
         }
     }
+    
+    func changeSheetTitle(title: String) {
+        self.sheetTitleLabel.text = title
+    }
+    
+    func reviewSheetWillDisplay() {
+        customDelegate?.reviewSheetViewWillDisplay!()
+    }
+
 }

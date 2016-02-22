@@ -52,7 +52,7 @@
                         <constraint firstAttribute="height" constant="70" id="eZ5-UK-pWH"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="68"/>
-                    <state key="normal" title="-">
+                    <state key="normal">
                         <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

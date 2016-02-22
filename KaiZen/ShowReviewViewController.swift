@@ -21,11 +21,11 @@ class ShowReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.customDelegate = reviewSheatViewModel
-//        customDelegate?.viewDidLoad!({ () -> Void in
-//            self.reviewSheatViewSetUP()
-//
-//        })
+        self.customDelegate = reviewSheatViewModel
+        customDelegate?.viewDidLoad!({ () -> Void in
+            self.reviewSheatViewSetUP()
+
+        })
         reviewSheatViewSetUP()
     }
 
@@ -37,9 +37,11 @@ class ShowReviewViewController: UIViewController {
         reviewSheatView = UINib(nibName: "ReviewSheatView", bundle: nil).instantiateWithOwner(self, options: nil).first as! ReviewSheatView
         
         reviewSheatView.tableView.dataSource = reviewSheatViewModel
-        reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatView.tableView.delegate = reviewSheatViewModel
+        reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatViewModel.customDelegate = reviewSheatView
+        
+        reviewSheatView.reviewSheetWillDisplay()
         
         self.view = reviewSheatView
     }
