@@ -15,8 +15,6 @@ class ShowChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setNoDataView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +22,17 @@ class ShowChartViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if self.view.subviews.isEmpty {
-            chartViewSetUP()
+        if !(self.view.subviews.isEmpty) {
+            self.view.subviews[0].removeFromSuperview()
         }
         
-        if chartViewModel.reviewSheetManager.reviewSheetArray.count != 0 {
-            chartViewSetUP()
-//            chartView!.graphView.reloadGraph()
+        guard chartViewModel.isNoData() else {
+            setNoDataView()
+            return
         }
+        
+        chartViewSetUP()
+        //ここのロジックは収納すべき？できる？
     }
     
     func chartViewSetUP() {
@@ -44,7 +45,7 @@ class ShowChartViewController: UIViewController {
     
     func setNoDataView() {
         let noGraphDataView = UINib(nibName: "NoGraphDataView", bundle: nil).instantiateWithOwner(self, options: nil).first as? NoGraphDataView
-        self.view = noGraphDataView
+        self.view.addSubview(noGraphDataView!)
     }
     
 }

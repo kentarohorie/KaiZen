@@ -9,14 +9,18 @@
 import UIKit
 
 @objc protocol ReviewSheatViewDelegate {
-    optional func tapEdit(tableView: UITableView, callback: () -> Void)
-    optional func tapAddReview() -> AddReviewView
+    optional func tapEdit(tableView: UITableView, callback: (isEdit: Bool) -> Void)
+    optional func tapAddReview() -> AddReviewView?
     optional func tapDone(tableView: UITableView)
     optional func edgeSwipeRight(superView: UIView) -> SideMenuView
+    optional func reviewSheetViewWillDisplay()
 }
 
-class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate, SideMenuViewDelegate {
+
+
+class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var sheetTitleLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     weak var customDelegate: ReviewSheatViewDelegate?
@@ -32,7 +36,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     func setUP() {
         tableViewSetUP()
         setGesture()
-        
+
         self.bringSubviewToFront(doneButton)
         doneButton.layer.borderWidth = 0.6
         doneButton.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
@@ -53,58 +57,10 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         self.addGestureRecognizer(edgePanGestureRecog)
     }
     
-    //---------receive event ------------------------
+    //--------- method -------
     
-    @IBAction func tapEdit(sender: UIButton) {
-        customDelegate?.tapEdit!(tableView, callback: { () -> Void in
-            self.tableView.reloadData()
-        })
-    }
-    
-    @IBAction func tapAddReview(sender: UIButton) {
-        addReviewView = customDelegate?.tapAddReview!()
-        addReviewView?.center = CGPoint(x: self.center.x, y: -(addReviewView!.frame.height))
-        
-        UIView.animateWithDuration(0.8) { () -> Void in
-            self.addReviewView?.center.y = self.center.y
-        }
-        
-        self.addSubview(addReviewView!)
-    }
-    
-    @IBAction func tapDone(sender: UIButton) {
-        customDelegate?.tapDone!(tableView)
-        setDoneAlert()
-    }
-    
-    func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
-        if sideMenuView == nil {
-            (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
-            UIApplication.sharedApplication().statusBarHidden = true
-            
-            
-            sideMenuView = customDelegate?.edgeSwipeRight!(self)
-            sideMenuView?.customDelegate = self
-            self.addSubview(sideMenuView!)
-            sideMenuView?.appearSideMenu()
-        }
-    }
-    
-    func sideMenuDidRemoveSelf() {
-        sideMenuView = nil
-        
-        (self.superview?.superview as? UIScrollView)?.scrollEnabled = true
-        UIApplication.sharedApplication().statusBarHidden = false
-    }
-    
-    //----- send event ------------
-    
-    func changeTableViewDate() {
-        tableView.reloadData()
-    }
-    
-    func setDoneAlert() {
-        let alertController = UIAlertController(title: "反省完了!", message: nil, preferredStyle: .Alert)
+    func setAlert(message: String) {
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
         let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(OKAction)
         
@@ -116,4 +72,75 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         baseView?.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func setAddView(addView: AddReviewView) {
+        addView.center = CGPoint(x: self.center.x, y: -(addView.frame.height))
+        
+        UIView.animateWithDuration(0.8) { () -> Void in
+            addView.center.y = self.center.y
+        }
+        
+        self.addSubview(addView)
+    }
+
+    
+    //---------receive event ------------------------
+    
+    @IBAction func tapEdit(sender: UIButton) {
+        customDelegate?.tapEdit!(tableView, callback: { (bool) -> Void in
+            guard bool else {
+                self.setAlert("シートの設定、レビューの追加をしてください")
+                return
+            }
+            self.tableView.reloadData()
+        })
+    }
+    
+    @IBAction func tapAddReview(sender: UIButton) {
+        guard let addView = customDelegate?.tapAddReview!() else {
+            setAlert("まずシートを作りましょう")
+            return
+        }
+        
+        setAddView(addView)
+    }
+    
+    @IBAction func tapDone(sender: UIButton) {
+        customDelegate?.tapDone!(tableView)
+        
+    }
+    
+    func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.state == .Began {
+            (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
+            UIApplication.sharedApplication().statusBarHidden = true
+            
+            
+            sideMenuView = customDelegate?.edgeSwipeRight!(self)
+            self.addSubview(sideMenuView!)
+            sideMenuView?.appearSideMenu()
+        }
+    }
+        
+    //----- send event ------------
+    
+    func changeTableViewDate() {
+        tableView.reloadData()
+    }
+    
+    func isDataAlert(bool: Bool) {
+        if bool {
+            setAlert("反省完了！")
+        } else {
+            setAlert("レビューを追加してください")
+        }
+    }
+    
+    func changeSheetTitle(title: String) {
+        self.sheetTitleLabel.text = title
+    }
+    
+    func reviewSheetWillDisplay() {
+        customDelegate?.reviewSheetViewWillDisplay!()
+    }
+
 }

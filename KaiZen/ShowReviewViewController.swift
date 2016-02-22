@@ -26,6 +26,7 @@ class ShowReviewViewController: UIViewController {
             self.reviewSheatViewSetUP()
 
         })
+        reviewSheatViewSetUP()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +37,11 @@ class ShowReviewViewController: UIViewController {
         reviewSheatView = UINib(nibName: "ReviewSheatView", bundle: nil).instantiateWithOwner(self, options: nil).first as! ReviewSheatView
         
         reviewSheatView.tableView.dataSource = reviewSheatViewModel
-        reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatView.tableView.delegate = reviewSheatViewModel
+        reviewSheatView.customDelegate = reviewSheatViewModel
         reviewSheatViewModel.customDelegate = reviewSheatView
+        
+        reviewSheatView.reviewSheetWillDisplay()
         
         self.view = reviewSheatView
     }
