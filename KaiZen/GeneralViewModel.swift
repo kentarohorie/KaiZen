@@ -37,10 +37,10 @@ class GeneralViewModel: NSObject, UIPageViewControllerDataSource, UIPageViewCont
             scrollView.scrollEnabled = true
         }
         
-        if panTranslation > 0 && scrollView.contentOffset.x <= 400 && !(isSecond) {
-            scrollView.contentOffset.x = 375
-        } else if panTranslation < 0 && scrollView.contentOffset.x >= 350 && isSecond {
-            scrollView.contentOffset.x = 375
+        if panTranslation > 0 && scrollView.contentOffset.x <= scrollView.frame.width + 25 && !(isSecond) {
+            scrollView.contentOffset.x = scrollView.frame.width
+        } else if panTranslation < 0 && scrollView.contentOffset.x >= scrollView.frame.width - 25 && isSecond {
+            scrollView.contentOffset.x = scrollView.frame.width
         }
     }
     
