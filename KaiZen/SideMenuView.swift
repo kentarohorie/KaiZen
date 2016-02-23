@@ -26,6 +26,7 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     var baseView: UIView!
     weak var customDelegate: SideMenuViewDelegate?
     let coverView: UIView = UIView()
+    var isDisplayAddView: Bool = false
     
     let reviewSheetManager = ReviewSheetManager.sharedInstance
     
@@ -104,6 +105,10 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     }
     
     func removeSideMenu() {
+//        guard !(isDisplayAddView) else {
+//            return
+//        }
+        
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.frame.origin.x = -(self.baseView.frame.width)
             self.coverView.frame.origin = CGPoint(x: self.frame.width - self.baseView.frame.width, y: 0)
@@ -111,12 +116,17 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
             }) { (bool) -> Void in
                 (self.superview?.superview?.superview as? UIScrollView)?.scrollEnabled = true
                 UIApplication.sharedApplication().statusBarHidden = false
+                (self.superview as? ReviewSheatView)?.isDisplaySideMenu = false
 
                 self.removeFromSuperview()
         }
     }
     
     func setAddView() {
+        guard !(isDisplayAddView) else {
+            return
+        }
+        
         addSheetView = UINib(nibName: "AddReviewView", bundle: nil).instantiateWithOwner(self, options: nil).first as? AddReviewView
         addSheetView!.customDelegate = self
         addSheetView?.center = CGPoint(x: self.superview!.center.x, y: -(addSheetView!.frame.height))
@@ -126,6 +136,11 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
         }
         
         self.addSubview(addSheetView!)
+        isDisplayAddView = true
+        
+//        self.userInteractionEnabled = false
+//        self.coverView.userInteractionEnabled = false
+//        self.addSheetView?.userInteractionEnabled = true
     }
     
     // ----- receive event --------
@@ -178,10 +193,6 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("sideMenuCell") as! SideMenuTableViewCell
-        
-        cell.selectionStyle = .None
-        cell.isSelectView.backgroundColor = UIColor.clearColor()
-        
         cell.titleLabel.text = reviewSheetManager.reviewSheetArray[indexPath.row].title
         
         return cell

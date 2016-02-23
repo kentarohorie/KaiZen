@@ -50,6 +50,8 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         tableView.layer.borderWidth = 0.6
         tableView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
         tableView.layer.cornerRadius = tableView.frame.width / 30
+        
+        tableView.backgroundColor = UIColor.clearColor()
     }
     
     func setGesture() {
@@ -60,19 +62,6 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     //--------- method -------
-    
-    func setAlert(message: String) {
-        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
-        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alertController.addAction(OKAction)
-        
-        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
-        while ((baseView?.presentedViewController) != nil)  {
-            baseView = baseView?.presentedViewController
-        }
-        
-        baseView?.presentViewController(alertController, animated: true, completion: nil)
-    }
     
     func setAddView(addView: AddReviewView) {
         addView.center = CGPoint(x: self.center.x, y: -(addView.frame.height))
@@ -90,7 +79,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     @IBAction func tapEdit(sender: UIButton) {
         customDelegate?.tapEdit!(tableView, callback: { (bool) -> Void in
             guard bool else {
-                self.setAlert("シートの設定、レビューの追加をしてください")
+                self.setAlert("シートの設定、レビューの追加をしてください", title: nil)
                 return
             }
             self.tableView.reloadData()
@@ -99,7 +88,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     
     @IBAction func tapAddReview(sender: UIButton) {
         guard let addView = customDelegate?.tapAddReview?() else {
-            setAlert("まずシートを作りましょう")
+            setAlert("まずシートを作りましょう", title: nil)
             return
         }
         
@@ -136,9 +125,10 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     
     func isDataAlert(bool: Bool) {
         if bool {
-            setAlert("反省完了！")
+            
+            setAlert("反省完了！", title: nil)
         } else {
-            setAlert("レビューを追加してください")
+            setAlert("レビューを追加してください", title: nil)
         }
     }
     

@@ -42,20 +42,6 @@ class AddReviewView: UIView, UITextFieldDelegate {
         }
     }
     
-    func setAlert() {
-        let alertController = UIAlertController(title: "Missing!", message: "テキストを入力してください。", preferredStyle: .Alert)
-        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alertController.addAction(OKAction)
-        
-        
-        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
-        while ((baseView?.presentedViewController) != nil)  {
-            baseView = baseView?.presentedViewController
-        }
-        
-        baseView?.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -65,7 +51,7 @@ class AddReviewView: UIView, UITextFieldDelegate {
 
     @IBAction func tapAdd(sender: UIButton) {
         guard textField.text! != "" else {
-            setAlert()
+            setAlert("Missing", title: "テキストを入力してください")
             return
         }
 

@@ -82,7 +82,6 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func viewDidLoad(callback: () -> Void) {
         ReviewSheetManager.fetchFromDevise { () -> Void in
-            
             callback()
         }
     }
