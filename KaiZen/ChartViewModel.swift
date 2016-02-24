@@ -35,7 +35,7 @@ class ChartViewModel: NSObject, BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDa
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, labelOnXAxisForIndex index: Int) -> String! {
-        return Optional("\(index) 反省目")
+        return Optional("\(index)th")
     }
     
 }
