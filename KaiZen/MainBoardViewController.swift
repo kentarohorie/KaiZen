@@ -15,7 +15,6 @@ class MainBoardViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         pageViewControllerSetting()
-        
     }
     
     override func didReceiveMemoryWarning() {
