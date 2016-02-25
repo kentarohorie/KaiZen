@@ -10,6 +10,7 @@ import UIKit
 
 class ChartView: UIView {
     
+    @IBOutlet weak var baseView: UIView!
     var graphView: BEMSimpleLineGraphView!
     
     override func awakeFromNib() {
@@ -20,6 +21,7 @@ class ChartView: UIView {
     }
     
     func setUP() {
+        baseView.frame = UIScreen.mainScreen().bounds
         setGraphView()
         setTitleView()
         setYView()
@@ -27,8 +29,8 @@ class ChartView: UIView {
     
     func setGraphView() {
         graphView = BEMSimpleLineGraphView()
-        graphView.frame.size = CGSize(width: self.frame.width / 13 * 12, height: self.frame.height / 7 * 6)
-        graphView.frame.origin = CGPoint(x: self.frame.width / 13, y: self.frame.height / 7)
+        graphView.frame.size = CGSize(width: baseView.frame.width / 13 * 12, height: baseView.frame.height / 7 * 6)
+        graphView.frame.origin = CGPoint(x: baseView.frame.width / 13, y: baseView.frame.height / 7)
         graphView.colorBottom = UIColor(red: 64/255, green: 133/255, blue: 174/255, alpha: 1)
         graphView.colorTop = UIColor(red: 64/255, green: 133/255, blue: 174/255, alpha: 1)
         
@@ -44,12 +46,12 @@ class ChartView: UIView {
         graphView.labelFont = UIFont(name: "Futura-Medium", size: 13)
         self.bringSubviewToFront(graphView)
         
-        self.addSubview(graphView)
+        baseView.addSubview(graphView)
     }
     
     func setTitleView() {
         let label = UILabel()
-        label.frame.size = CGSize(width: self.frame.width, height: self.frame.height / 7 - 4)
+        label.frame.size = CGSize(width: baseView.frame.width, height: baseView.frame.height / 7 - 4)
         label.frame.origin = CGPointZero
         label.backgroundColor = graphView.colorBottom
         label.text = "Improve"
@@ -57,15 +59,15 @@ class ChartView: UIView {
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         
-        self.addSubview(label)
+        baseView.addSubview(label)
     }
     
     func setYView() {
         let view = UIView()
-        view.frame.size = CGSize(width: self.frame.width / 13, height: self.frame.height / 7 * 6)
-        view.frame.origin = CGPoint(x: 0, y: self.frame.height / 7)
+        view.frame.size = CGSize(width: baseView.frame.width / 13, height: baseView.frame.height / 7 * 6)
+        view.frame.origin = CGPoint(x: 0, y: baseView.frame.height / 7)
         view.backgroundColor = graphView.colorBottom
-        self.addSubview(view)
+        baseView.addSubview(view)
         
         view.addSubview(setYLabel("(%)", y: 0))
         view.addSubview(setYLabel("100", y: view.frame.height / 19))
@@ -76,8 +78,8 @@ class ChartView: UIView {
     func setYLabel(text: String, y: CGFloat) -> UILabel {
         let label = UILabel()
         label.text = text
-        label.frame.size = CGSize(width: self.frame.width / 13, height: 30)
-        label.bounds.origin.x = self.frame.width / 13
+        label.frame.size = CGSize(width: baseView.frame.width / 13, height: 30)
+        label.bounds.origin.x = baseView.frame.width / 13
         label.frame.origin.y = y
         label.backgroundColor = UIColor.clearColor()
         label.textColor = UIColor.whiteColor()
