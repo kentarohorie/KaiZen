@@ -14,6 +14,7 @@ import UIKit
 
 class ReviewSheatTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var reviewTextLabel: UILabel!
     @IBOutlet weak var gradeSegmentedControl: UISegmentedControl!
     weak var customDelegate: ReviewSheatTableViewCellDelegate?
@@ -30,9 +31,10 @@ class ReviewSheatTableViewCell: UITableViewCell {
     // ------ set view -------------
     
     func setUP() {
-        self.layer.borderWidth = 0.6
-        self.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
         self.selectionStyle = .None
+        coverView.layer.cornerRadius = self.frame.width / 30
+        self.layer.shadowOffset = CGSize(width: 1, height: -1)
+        self.layer.shadowOpacity = 0.2
         
         gradeSegmentedControl.addTarget(self, action: "changeSegConValue:", forControlEvents: .ValueChanged)
     }
