@@ -24,7 +24,9 @@ class SideMenuTableViewCell: UITableViewCell {
     }
     
     func selfSetting() {
-        self.backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clearColor()
+        selectionStyle = .None
+        isSelectView.backgroundColor = UIColor.clearColor()
     }
     
 }

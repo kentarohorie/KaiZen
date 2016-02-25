@@ -39,6 +39,8 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     func selfSetting() {
         self.hidden = true
         coverView.backgroundColor = UIColor.clearColor()
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = CGSize(width: 3, height: 0)
 
         tableViewSetting()
         buttonSetting()
@@ -100,7 +102,7 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
             
             self.coverView.frame.origin.x = self.frame.width
             self.coverView.frame.size = CGSize(width: self.baseView.frame.width - self.frame.width, height: self.baseView.frame.height)
-            self.coverView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+            self.coverView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         }
     }
     
