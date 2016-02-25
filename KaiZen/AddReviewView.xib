@@ -3,58 +3,78 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddReviewView" customModule="KaiZen" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="129"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9y-KX-IMg">
-                    <rect key="frame" x="127" y="90" width="46" height="30"/>
+                    <rect key="frame" x="8" y="73" width="284" height="21"/>
+                    <color key="backgroundColor" red="0.25098039220000001" green="0.52156862749999999" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="zQr-Bh-yab"/>
+                        <constraint firstAttribute="height" constant="21" id="pn4-V6-N8K"/>
                     </constraints>
-                    <state key="normal" title="Add"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="tapAdd:" destination="iN0-l3-epB" eventType="touchUpInside" id="cLx-Sk-z2f"/>
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NA-MK-EjD">
-                    <rect key="frame" x="8" y="38" width="284" height="30"/>
+                    <rect key="frame" x="8" y="29" width="284" height="28"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5s-iR-qbD">
-                    <rect key="frame" x="255" y="8" width="37" height="22"/>
+                    <rect key="frame" x="8" y="102" width="284" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="37" id="9Sg-yC-cGS"/>
-                        <constraint firstAttribute="height" constant="22" id="nTd-Nf-kx1"/>
+                        <constraint firstAttribute="height" constant="19" id="sKG-ml-Tdq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <state key="normal" title="x"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="tapClose:" destination="iN0-l3-epB" eventType="touchUpInside" id="4ns-ek-RbD"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFq-39-KYv">
+                    <rect key="frame" x="8" y="0.0" width="107" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3IB-zJ-coU"/>
+                        <constraint firstAttribute="width" constant="107" id="Sdu-c9-NNo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.094117647060000004" green="0.36470588240000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="9NA-MK-EjD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="6ns-zI-eDA"/>
-                <constraint firstItem="w5s-iR-qbD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="BhQ-o1-qa8"/>
-                <constraint firstItem="9NA-MK-EjD" firstAttribute="trailing" secondItem="w5s-iR-qbD" secondAttribute="trailing" id="Hks-90-w1T"/>
-                <constraint firstItem="9NA-MK-EjD" firstAttribute="top" secondItem="w5s-iR-qbD" secondAttribute="bottom" constant="8" symbolic="YES" id="OTa-Us-OaY"/>
-                <constraint firstItem="9NA-MK-EjD" firstAttribute="centerX" secondItem="u9y-KX-IMg" secondAttribute="centerX" id="T7j-LU-Hay"/>
-                <constraint firstItem="9NA-MK-EjD" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="fLr-S8-EHE"/>
-                <constraint firstItem="u9y-KX-IMg" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="iaB-mM-BgE"/>
+                <constraint firstItem="w5s-iR-qbD" firstAttribute="top" secondItem="u9y-KX-IMg" secondAttribute="bottom" constant="8" id="17e-Ad-sq3"/>
+                <constraint firstItem="u9y-KX-IMg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1AT-DY-fSb"/>
+                <constraint firstItem="9NA-MK-EjD" firstAttribute="top" secondItem="tFq-39-KYv" secondAttribute="bottom" constant="8" id="3Ol-Yb-G3M"/>
+                <constraint firstItem="w5s-iR-qbD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="4yY-vR-HkB"/>
+                <constraint firstItem="9NA-MK-EjD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="DWQ-g8-Ti4"/>
+                <constraint firstAttribute="trailing" secondItem="w5s-iR-qbD" secondAttribute="trailing" constant="8" id="Nj1-6w-i1J"/>
+                <constraint firstAttribute="trailing" secondItem="9NA-MK-EjD" secondAttribute="trailing" constant="8" id="Rs1-k2-t8l"/>
+                <constraint firstItem="tFq-39-KYv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Sfx-hk-IQk"/>
+                <constraint firstAttribute="bottom" secondItem="w5s-iR-qbD" secondAttribute="bottom" constant="8" id="W8U-EQ-57e"/>
+                <constraint firstItem="u9y-KX-IMg" firstAttribute="top" secondItem="9NA-MK-EjD" secondAttribute="bottom" constant="16" id="agh-sx-AQx"/>
+                <constraint firstAttribute="trailing" secondItem="u9y-KX-IMg" secondAttribute="trailing" constant="8" id="nhv-Ca-gIf"/>
+                <constraint firstItem="tFq-39-KYv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="qxK-jt-jKJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="addReviewButton" destination="u9y-KX-IMg" id="COr-BM-U05"/>
                 <outlet property="textField" destination="9NA-MK-EjD" id="Vwo-tb-FWj"/>
             </connections>
-            <point key="canvasLocation" x="442" y="252"/>
+            <point key="canvasLocation" x="442" y="305.5"/>
         </view>
     </objects>
 </document>
