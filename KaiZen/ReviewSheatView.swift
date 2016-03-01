@@ -81,6 +81,16 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         
         self.addSubview(addView)
     }
+    
+    func appearSideMenu() {
+        (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
+        UIApplication.sharedApplication().statusBarHidden = true
+        
+        sideMenuView = customDelegate?.edgeSwipeRight!(self)
+        self.addSubview(sideMenuView!)
+        sideMenuView?.appearSideMenu()
+        isDisplaySideMenu = true
+    }
 
     
     //---------receive event ------------------------
@@ -114,7 +124,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     @IBAction func tapMenu(sender: UIButton) {
-        
+        appearSideMenu()
     }
     
     @IBAction func tapLeft(sender: UIButton) {
@@ -131,14 +141,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
         if sender.state == .Began && !(isDisplaySideMenu) {
-            (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
-            UIApplication.sharedApplication().statusBarHidden = true
-            
-            
-            sideMenuView = customDelegate?.edgeSwipeRight!(self)
-            self.addSubview(sideMenuView!)
-            sideMenuView?.appearSideMenu()
-            isDisplaySideMenu = true
+            appearSideMenu()
         }
     }
         
