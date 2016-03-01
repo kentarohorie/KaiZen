@@ -118,7 +118,15 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     }
     
     @IBAction func tapLeft(sender: UIButton) {
-        (self.superview?.superview as? UIScrollView)?.contentOffset = CGPoint(x: self.frame.width / 2 * 3 + 1, y: 0)
+        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while ((baseView?.presentedViewController) != nil)  {
+            baseView = baseView?.presentedViewController
+        }
+        let mainBoardViewController = baseView as? MainBoardViewController
+        let secondViewController = ShowChartViewController()
+        mainBoardViewController?.pageViewController.setViewControllers([secondViewController], direction: .Forward, animated: true, completion: nil)
+        
+            mainBoardViewController?.generalViewModel.isSecond = true
     }
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {

@@ -11,7 +11,8 @@ import UIKit
 class MainBoardViewController: UIViewController, UIScrollViewDelegate {
     
     let generalViewModel: GeneralViewModel = GeneralViewModel()
-
+    let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pageViewControllerSetting()
@@ -24,7 +25,7 @@ class MainBoardViewController: UIViewController, UIScrollViewDelegate {
     //---------------pageviewcontroller---------------------
 
     func pageViewControllerSetting() {
-        let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        
         pageViewController.dataSource = generalViewModel
         pageViewController.delegate = generalViewModel
         
