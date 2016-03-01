@@ -26,7 +26,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     func changeSegConValue(sender: UISegmentedControl) {
         let cell = sender.superview?.superview?.superview as! UITableViewCell
         let tableView = cell.superview?.superview as! UITableView
-        let row = tableView.indexPathForCell(cell)?.row
+        let row = tableView.indexPathForCell(cell)?.section
         
         reviewSheetTmp.reviewArray[row!].reviewPoint = sender.selectedSegmentIndex
     }
@@ -131,7 +131,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("ReviewSheatTableViewCell") as! ReviewSheatTableViewCell
         cell.customDelegate = self
         cell.reviewTextLabel.text = reviewSheetTmp.reviewArray[indexPath.section].reviewText
-        cell.gradeSegmentedControl.selectedSegmentIndex = 0
+        cell.gradeSegmentedControl.selectedSegmentIndex = reviewSheetTmp.reviewArray[indexPath.section].reviewPoint
         
         return cell
     }
