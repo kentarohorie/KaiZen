@@ -19,7 +19,6 @@ class GeneralViewModel: NSObject, UIPageViewControllerDataSource, UIPageViewCont
         guard completed else {
             return
         }
-        
         if NSStringFromClass(previousViewControllers[0].dynamicType).componentsSeparatedByString(".").last! == "ShowChartViewController" {
                 isSecond = false
 
@@ -73,4 +72,5 @@ class GeneralViewModel: NSObject, UIPageViewControllerDataSource, UIPageViewCont
             return nil
         }
     }
+    
 }

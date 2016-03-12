@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9532"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,8 +10,23 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChartView" customModule="KaiZen" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3H1-0j-Isd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="3H1-0j-Isd" secondAttribute="bottom" id="9Ti-A4-E9d"/>
+                <constraint firstItem="3H1-0j-Isd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GSw-gA-tJc"/>
+                <constraint firstItem="3H1-0j-Isd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HzQ-82-5hg"/>
+                <constraint firstAttribute="trailing" secondItem="3H1-0j-Isd" secondAttribute="trailing" id="lt4-co-fQb"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outlet property="baseView" destination="3H1-0j-Isd" id="r7O-7m-fUA"/>
+            </connections>
         </view>
     </objects>
 </document>

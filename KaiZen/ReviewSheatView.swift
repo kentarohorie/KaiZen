@@ -38,17 +38,20 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     func setUP() {
         tableViewSetUP()
         setGesture()
+        setDoneShadow()
 
+        sheetTitleLabel.adjustsFontSizeToFitWidth = true
+        self.frame = UIScreen.mainScreen().bounds
         self.bringSubviewToFront(doneButton)
-        doneButton.layer.borderWidth = 0.6
-        doneButton.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
-        doneButton.layer.cornerRadius = doneButton.frame.width / 5
+        self.subviews[0].layer.cornerRadius = self.frame.width / 40
+        self.subviews[0].layer.shadowOffset = CGSize(width: 4, height: -4)
+        self.subviews[0].layer.shadowOpacity = 1
+        self.subviews[0].layer.shadowColor = UIColor.blackColor().CGColor
     }
     
     func tableViewSetUP() {
         tableView.registerNib(UINib(nibName: "ReviewSheatTableViewCell", bundle: nil), forCellReuseIdentifier: "ReviewSheatTableViewCell")
-        tableView.layer.borderWidth = 0.6
-        tableView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor
+        tableView.separatorColor = UIColor.clearColor()
         tableView.layer.cornerRadius = tableView.frame.width / 30
         
         tableView.backgroundColor = UIColor.clearColor()
@@ -61,9 +64,15 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         self.addGestureRecognizer(edgePanGestureRecog)
     }
     
+    func setDoneShadow() {
+        doneButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        doneButton.layer.shadowOpacity = 0.4
+    }
+    
     //--------- method -------
     
     func setAddView(addView: AddReviewView) {
+        addView.frame.size = CGSize(width: self.frame.width / 5 * 4, height: self.frame.height / 100 * 24)
         addView.center = CGPoint(x: self.center.x, y: -(addView.frame.height))
         
         UIView.animateWithDuration(0.8) { () -> Void in
@@ -71,6 +80,16 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         }
         
         self.addSubview(addView)
+    }
+    
+    func appearSideMenu() {
+        (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
+        UIApplication.sharedApplication().statusBarHidden = true
+        
+        sideMenuView = customDelegate?.edgeSwipeRight!(self)
+        self.addSubview(sideMenuView!)
+        sideMenuView?.appearSideMenu()
+        isDisplaySideMenu = true
     }
 
     
@@ -104,16 +123,25 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         
     }
     
+    @IBAction func tapMenu(sender: UIButton) {
+        appearSideMenu()
+    }
+    
+    @IBAction func tapLeft(sender: UIButton) {
+        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while ((baseView?.presentedViewController) != nil)  {
+            baseView = baseView?.presentedViewController
+        }
+        let mainBoardViewController = baseView as? MainBoardViewController
+        let secondViewController = ShowChartViewController()
+        mainBoardViewController?.pageViewController.setViewControllers([secondViewController], direction: .Forward, animated: true, completion: nil)
+        
+            mainBoardViewController?.generalViewModel.isSecond = true
+    }
+    
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {
         if sender.state == .Began && !(isDisplaySideMenu) {
-            (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
-            UIApplication.sharedApplication().statusBarHidden = true
-            
-            
-            sideMenuView = customDelegate?.edgeSwipeRight!(self)
-            self.addSubview(sideMenuView!)
-            sideMenuView?.appearSideMenu()
-            isDisplaySideMenu = true
+            appearSideMenu()
         }
     }
         

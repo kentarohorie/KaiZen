@@ -28,14 +28,14 @@ class ChartViewModel: NSObject, BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDa
     
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: NSInteger) -> CGFloat {
         if index == 0 {
-            return 0
+            return 1
         } else {
             return CGFloat(reviewSheetManager.currentReviewSheet!.pointRatioArray[index - 1])
         }
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, labelOnXAxisForIndex index: Int) -> String! {
-        return Optional("\(index) 反省目")
+        return Optional("\(index)th")
     }
     
 }

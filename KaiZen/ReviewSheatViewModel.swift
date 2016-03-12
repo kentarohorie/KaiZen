@@ -24,9 +24,9 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     //------- receive and send data ----------
     
     func changeSegConValue(sender: UISegmentedControl) {
-        let cell = sender.superview?.superview as! UITableViewCell
+        let cell = sender.superview?.superview?.superview as! UITableViewCell
         let tableView = cell.superview?.superview as! UITableView
-        let row = tableView.indexPathForCell(cell)?.row
+        let row = tableView.indexPathForCell(cell)?.section
         
         reviewSheetTmp.reviewArray[row!].reviewPoint = sender.selectedSegmentIndex
     }
@@ -130,18 +130,34 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ReviewSheatTableViewCell") as! ReviewSheatTableViewCell
         cell.customDelegate = self
-        cell.reviewTextLabel.text = reviewSheetTmp.reviewArray[indexPath.row].reviewText
-        cell.gradeSegmentedControl.selectedSegmentIndex = 0
+        cell.reviewTextLabel.text = reviewSheetTmp.reviewArray[indexPath.section].reviewText
+        cell.gradeSegmentedControl.selectedSegmentIndex = reviewSheetTmp.reviewArray[indexPath.section].reviewPoint
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1//reviewSheetTmp.reviewArray.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return reviewSheetTmp.reviewArray.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 100
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 4
+//    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clearColor()
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -14,6 +14,7 @@ import UIKit
 
 class AddReviewView: UIView, UITextFieldDelegate {
 
+    @IBOutlet weak var addReviewButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     weak var customDelegate: AddReviewViewDelegate?
  
@@ -27,6 +28,10 @@ class AddReviewView: UIView, UITextFieldDelegate {
         self.layer.borderColor = UIColor.grayColor().CGColor
         self.layer.borderWidth = 0.8
         self.layer.cornerRadius = self.frame.width / 40
+        self.layer.shadowOffset = CGSize(width: 3, height: -3)
+        self.layer.shadowOpacity = 0.5
+        
+        addReviewButton.layer.cornerRadius = addReviewButton.frame.width / 40
         
         textField.delegate = self
     }
@@ -35,6 +40,7 @@ class AddReviewView: UIView, UITextFieldDelegate {
     
     func closeAnimation() {
         (self.superview as? ReviewSheatView)?.isDisplayAddView = false
+        (self.superview as? SideMenuView)?.isDisplayAddView = false
         UIView.animateWithDuration(0.8, animations: { () -> Void in
             self.center.y = -(self.frame.height)
             }) { (bool) -> Void in
@@ -62,6 +68,7 @@ class AddReviewView: UIView, UITextFieldDelegate {
     
     @IBAction func tapClose(sender: UIButton) {
         closeAnimation()
+        textField.resignFirstResponder()
     }
     
     
