@@ -40,6 +40,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         setGesture()
         setDoneShadow()
 
+        sheetTitleLabel.adjustsFontSizeToFitWidth = true
         self.frame = UIScreen.mainScreen().bounds
         self.bringSubviewToFront(doneButton)
         self.subviews[0].layer.cornerRadius = self.frame.width / 40
@@ -71,7 +72,6 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     //--------- method -------
     
     func setAddView(addView: AddReviewView) {
-        print(self.frame)
         addView.frame.size = CGSize(width: self.frame.width / 5 * 4, height: self.frame.height / 100 * 24)
         addView.center = CGPoint(x: self.center.x, y: -(addView.frame.height))
         

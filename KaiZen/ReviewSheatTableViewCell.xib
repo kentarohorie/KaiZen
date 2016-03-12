@@ -15,10 +15,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K79-dW-Q2Y">
-                        <rect key="frame" x="8" y="8" width="359" height="83"/>
+                        <rect key="frame" x="4" y="4" width="367" height="91"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-fO-deg">
-                                <rect key="frame" x="132" y="47" width="219" height="29"/>
+                                <rect key="frame" x="140" y="55" width="219" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="n0A-9z-Rsz"/>
                                     <constraint firstAttribute="height" constant="28" id="yM2-go-GVI"/>
@@ -31,7 +31,7 @@
                                 <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あああああああああああああああああああああああああああああああああああああああああああああああああ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-Aq-wTF">
-                                <rect key="frame" x="8" y="8" width="343" height="40"/>
+                                <rect key="frame" x="8" y="8" width="351" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JuW-pE-Qqp"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.094117647060000004" green="0.36470588240000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Cbc-Aq-wTF" firstAttribute="top" secondItem="K79-dW-Q2Y" secondAttribute="top" constant="8" id="5hq-dM-bgU"/>
                             <constraint firstAttribute="trailing" secondItem="Vyw-fO-deg" secondAttribute="trailing" constant="8" id="Uvk-CS-PZk"/>
@@ -52,10 +52,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="K79-dW-Q2Y" secondAttribute="trailing" constant="8" id="BHL-Kx-gSR"/>
-                    <constraint firstAttribute="bottom" secondItem="K79-dW-Q2Y" secondAttribute="bottom" constant="8" id="y5F-sI-jOM"/>
-                    <constraint firstItem="K79-dW-Q2Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yK6-Pe-ZU9"/>
-                    <constraint firstItem="K79-dW-Q2Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="z59-3D-Y9h"/>
+                    <constraint firstAttribute="trailing" secondItem="K79-dW-Q2Y" secondAttribute="trailing" constant="4" id="BHL-Kx-gSR"/>
+                    <constraint firstAttribute="bottom" secondItem="K79-dW-Q2Y" secondAttribute="bottom" constant="4" id="y5F-sI-jOM"/>
+                    <constraint firstItem="K79-dW-Q2Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="yK6-Pe-ZU9"/>
+                    <constraint firstItem="K79-dW-Q2Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="z59-3D-Y9h"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
