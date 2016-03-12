@@ -17,15 +17,9 @@ class ReviewSheet {
         var reviewPointSum = 0
         for review in reviewAry {
             reviewPointSum += review.reviewPoint
-            print("==\(review.reviewPoint)==")
         }
         
         let ratio = Float(reviewPointSum) / Float(reviewAry.count * 2)
-        //
-        print(reviewPointSum)
-        print(reviewAry.count * 2)
-        print(ratio)
-        //
         pointRatioArray.append(ratio)
     }
     

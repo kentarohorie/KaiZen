@@ -43,7 +43,6 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
         self.layer.shadowOffset = CGSize(width: 3, height: 0)
 
         tableViewSetting()
-        buttonSetting()
         setGesture()
     }
     
@@ -69,15 +68,6 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
         swipeLeftGestureRecog.direction = .Left
         self.addGestureRecognizer(swipeLeftGestureRecog)
 
-    }
-    
-    func buttonSetting() {
-//        plusButton.layer.borderColor = UIColor.whiteColor().CGColor
-//        plusButton.layer.borderWidth = 0.3
-//        
-//        minusButton.layer.borderColor = UIColor.whiteColor().CGColor
-//        minusButton.layer.borderWidth = 0.3
-        
     }
     
     //------------ method -----------------
@@ -133,16 +123,14 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
         addSheetView!.customDelegate = self
         addSheetView?.center = CGPoint(x: self.superview!.center.x, y: -(addSheetView!.frame.height))
         
-        UIView.animateWithDuration(0.8) { () -> Void in
+        UIView.animateWithDuration(0.6) { () -> Void in
             self.addSheetView?.center.y = self.center.y
         }
         
         self.addSubview(addSheetView!)
         isDisplayAddView = true
         
-//        self.userInteractionEnabled = false
-//        self.coverView.userInteractionEnabled = false
-//        self.addSheetView?.userInteractionEnabled = true
+        addSheetView?.textField.becomeFirstResponder()
     }
     
     // ----- receive event --------
@@ -178,10 +166,7 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
     
     
     
-    
-    
-    
-    //--------- likely modelview... ------------->>>
+    //--------- likely viewmodel... ------------->>>
     
     //----------- tableView datasource --------------
     
