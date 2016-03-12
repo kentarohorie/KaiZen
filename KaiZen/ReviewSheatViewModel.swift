@@ -149,7 +149,7 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 4
+        return 1
     }
     
 //    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
