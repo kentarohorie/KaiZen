@@ -27,6 +27,7 @@ class SideMenuTableViewCell: UITableViewCell {
         backgroundColor = UIColor.clearColor()
         selectionStyle = .None
         isSelectView.backgroundColor = UIColor.clearColor()
+        titleLabel.adjustsFontSizeToFitWidth = true
     }
     
 }
