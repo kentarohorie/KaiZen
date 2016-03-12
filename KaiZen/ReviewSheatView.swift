@@ -105,9 +105,9 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         let toRecipients = ["info.ratneko@gmail.com"]
         
         mailViewController.mailComposeDelegate = self
-        mailViewController.setSubject("KAIZENについて")
+        mailViewController.setSubject("KaiZenについて")
         mailViewController.setToRecipients(toRecipients)
-        mailViewController.setMessageBody("ご質問、もしくはKAIZENについてフィードバックなどをお書きください。", isHTML: false)
+        mailViewController.setMessageBody("ご質問、もしくはKaiZenについてフィードバックなどをお書きください。", isHTML: false)
         var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
         while ((baseView?.presentedViewController) != nil)  {
             baseView = baseView?.presentedViewController
