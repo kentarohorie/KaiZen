@@ -68,6 +68,7 @@ class AddReviewView: UIView, UITextFieldDelegate {
     
     @IBAction func tapClose(sender: UIButton) {
         closeAnimation()
+        textField.resignFirstResponder()
     }
     
     
