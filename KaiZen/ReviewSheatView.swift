@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 @objc protocol ReviewSheatViewDelegate {
     optional func tapEdit(tableView: UITableView, callback: (isEdit: Bool) -> Void)
@@ -18,7 +19,7 @@ import UIKit
 
 
 
-class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate {
+class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var sheetTitleLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
@@ -91,7 +92,35 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         sideMenuView?.appearSideMenu()
         isDisplaySideMenu = true
     }
+    
+    //--------- about mail --------------
+    
+    func startMail() {
+        guard MFMailComposeViewController.canSendMail() else {
+            print("email send faild")
+            return
+        }
+        
+        let mailViewController = MFMailComposeViewController()
+        let toRecipients = ["info.ratneko@gmail.com"]
+        
+        mailViewController.mailComposeDelegate = self
+        mailViewController.setSubject("KAIZENについて")
+        mailViewController.setToRecipients(toRecipients)
+        mailViewController.setMessageBody("ご質問、もしくはKAIZENについてフィードバックなどをお書きください。", isHTML: false)
+        var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while ((baseView?.presentedViewController) != nil)  {
+            baseView = baseView?.presentedViewController
+        }
+        baseView?.presentViewController(mailViewController, animated: true, completion: nil)
 
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     
     //---------receive event ------------------------
     
@@ -143,6 +172,10 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         if sender.state == .Began && !(isDisplaySideMenu) {
             appearSideMenu()
         }
+    }
+    
+    @IBAction func tapInfo(sender: UIButton) {
+        startMail()
     }
         
     //----- send event ------------

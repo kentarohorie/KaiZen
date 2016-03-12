@@ -94,9 +94,16 @@
                                 <action selector="tapEdit:" destination="iN0-l3-epB" eventType="touchUpInside" id="tqM-wk-lHi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-YA-72f">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-YA-72f">
                             <rect key="frame" x="309" y="577" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="P0x-CL-fhH"/>
+                                <constraint firstAttribute="width" constant="50" id="pCN-PU-VlA"/>
+                            </constraints>
                             <state key="normal" image="question128_1.png"/>
+                            <connections>
+                                <action selector="tapInfo:" destination="iN0-l3-epB" eventType="touchUpInside" id="6Ri-Hx-HMG"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.25098039220000001" green="0.52156862749999999" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,9 +117,11 @@
                         <constraint firstItem="RzJ-ec-mwY" firstAttribute="leading" secondItem="pN5-tT-Wvy" secondAttribute="trailing" constant="8" id="GmU-rf-NcR"/>
                         <constraint firstAttribute="bottom" secondItem="yGi-bD-mbN" secondAttribute="bottom" id="H3p-Ku-ppn"/>
                         <constraint firstAttribute="trailing" secondItem="B8s-QF-5oc" secondAttribute="trailing" constant="8" id="HFs-kR-UgE"/>
+                        <constraint firstAttribute="trailing" secondItem="iX6-YA-72f" secondAttribute="trailing" id="JmW-8J-BsO"/>
                         <constraint firstItem="bJR-kW-SOP" firstAttribute="leading" secondItem="2Ox-QN-iLQ" secondAttribute="leading" constant="-3" id="KcE-BG-LB2"/>
                         <constraint firstItem="QD3-DC-ANA" firstAttribute="leading" secondItem="0cw-Hd-Pzr" secondAttribute="trailing" constant="8" id="MNt-5c-ynU"/>
                         <constraint firstItem="B8s-QF-5oc" firstAttribute="top" secondItem="0cw-Hd-Pzr" secondAttribute="bottom" constant="4" id="PEy-HQ-EWS"/>
+                        <constraint firstAttribute="bottom" secondItem="iX6-YA-72f" secondAttribute="bottom" id="XLx-Uq-WyL"/>
                         <constraint firstAttribute="bottom" secondItem="bJR-kW-SOP" secondAttribute="bottom" id="YHM-vg-tmk"/>
                         <constraint firstItem="B8s-QF-5oc" firstAttribute="top" secondItem="pN5-tT-Wvy" secondAttribute="bottom" constant="90" id="cTm-MH-4w7"/>
                         <constraint firstAttribute="trailing" secondItem="RzJ-ec-mwY" secondAttribute="trailing" constant="8" id="dGj-PT-Rxd"/>
