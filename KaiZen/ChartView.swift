@@ -33,13 +33,12 @@ class ChartView: UIView {
         graphView.frame.origin = CGPoint(x: baseView.frame.width / 13, y: baseView.frame.height / 7)
         graphView.colorBottom = UIColor(red: 64/255, green: 133/255, blue: 174/255, alpha: 1)
         graphView.colorTop = UIColor(red: 64/255, green: 133/255, blue: 174/255, alpha: 1)
-        
+        graphView.autoScaleYAxis = true
         graphView.enableXAxisLabel = true
         graphView.enableReferenceYAxisLines = true ////
         graphView.colorXaxisLabel = UIColor.whiteColor()
         graphView.colorYaxisLabel = UIColor.whiteColor()
         graphView.enableBezierCurve = true
-        graphView.autoScaleYAxis = true
         graphView.animationGraphEntranceTime = 3
         graphView.alwaysDisplayDots = true
         graphView.widthLine = 3

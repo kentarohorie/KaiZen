@@ -28,7 +28,7 @@ class ChartViewModel: NSObject, BEMSimpleLineGraphDelegate, BEMSimpleLineGraphDa
     
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: NSInteger) -> CGFloat {
         if index == 0 {
-            return 0
+            return 1
         } else {
             return CGFloat(reviewSheetManager.currentReviewSheet!.pointRatioArray[index - 1])
         }
