@@ -94,6 +94,10 @@
                                 <action selector="tapEdit:" destination="iN0-l3-epB" eventType="touchUpInside" id="tqM-wk-lHi"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-YA-72f">
+                            <rect key="frame" x="309" y="577" width="50" height="50"/>
+                            <state key="normal" image="question128_1.png"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.25098039220000001" green="0.52156862749999999" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -143,6 +147,7 @@
         <image name="add_128px.png" width="128" height="128"/>
         <image name="check_128px.png" width="128" height="128"/>
         <image name="menu_128px.png" width="128" height="128"/>
+        <image name="question128_1.png" width="128" height="128"/>
         <image name="single_left_128px.png" width="128" height="128"/>
         <image name="trash_128px.png" width="128" height="128"/>
     </resources>
