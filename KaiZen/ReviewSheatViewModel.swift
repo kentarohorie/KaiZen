@@ -152,10 +152,6 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         return 1
     }
     
-//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 4
-//    }
-    
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.clearColor()
     }
