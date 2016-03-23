@@ -48,6 +48,7 @@
 		AA70EE851C7C7787003427BC /* menu_128px.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70EE831C7C7787003427BC /* menu_128px.png */; };
 		AA70EE881C7C7FBC003427BC /* check_128px.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70EE871C7C7FBC003427BC /* check_128px.png */; };
 		AA70EE8A1C7C8A0C003427BC /* new_sheet_128px.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70EE891C7C8A0C003427BC /* new_sheet_128px.png */; };
+		AA7D13991CA2C7650054ECDF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7D13981CA2C7650054ECDF /* UIViewController+Extension.swift */; };
 		AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87A0591C6C24D100560495 /* GeneralViewModel.swift */; };
 		AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		AA70EE831C7C7787003427BC /* menu_128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_128px.png; sourceTree = "<group>"; };
 		AA70EE871C7C7FBC003427BC /* check_128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_128px.png; sourceTree = "<group>"; };
 		AA70EE891C7C8A0C003427BC /* new_sheet_128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_sheet_128px.png; sourceTree = "<group>"; };
+		AA7D13981CA2C7650054ECDF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AA87A0591C6C24D100560495 /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		AAB3E2A51C6B813300B429DB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2BB1D01C7B4B3A0088D7D5 /* UIView+Extension.swift */,
+				AA7D13981CA2C7650054ECDF /* UIViewController+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				AA0117081C70423E00843BA1 /* NoGraphDataView.swift in Sources */,
 				AA0F0DE11C690AEF00815833 /* ReviewSheatViewModel.swift in Sources */,
 				AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */,
+				AA7D13991CA2C7650054ECDF /* UIViewController+Extension.swift in Sources */,
 				AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */,
 				AA0F0DE41C690C5E00815833 /* ReviewSheatTableViewCell.swift in Sources */,
 				AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */,
