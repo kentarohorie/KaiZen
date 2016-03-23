@@ -29,7 +29,7 @@ class ReviewSheetManager {
             defaults.setObject(saveCurrentReviewSheet, forKey: "currentReviewSheet")
         }
     }
-    
+            
     class func fetchFromDevise(callback: () -> Void ) {
         let defaults = NSUserDefaults.standardUserDefaults()
         
@@ -46,6 +46,22 @@ class ReviewSheetManager {
         }
         
         callback()
+    }
+    
+    class func addExampleData() {
+        let reviewSheet = ReviewSheet()
+        reviewSheet.title = "Example Sheet"
+        reviewSheet.pointRatioArray = [0.3, 0.6, 0.8, 0.6, 1, 0.8, 1]
+        let reviewTextArray = ["朝ごはんを食べる", "ランニングをする", "読書をする", "掃除をする", "挨拶をする"]
+        for text in reviewTextArray {
+            let review = Review()
+            review.set(text, reviewPoint: 0)
+            reviewSheet.reviewArray.append(review)
+        }
+
+        self.sharedInstance.currentReviewSheet = reviewSheet
+        
+        saveForDevise()
     }
     
     //-------------------- convertData --------------

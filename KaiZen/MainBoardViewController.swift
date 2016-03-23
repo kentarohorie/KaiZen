@@ -15,6 +15,9 @@ class MainBoardViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isFirstRun() {
+            ReviewSheetManager.addExampleData()
+        }
         pageViewControllerSetting()
     }
     
