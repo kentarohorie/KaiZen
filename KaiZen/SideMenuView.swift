@@ -203,6 +203,7 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
             return
         }
         delegate.sideMenuCellDidSelect!(indexPath.row)
+        ReviewSheetManager.saveForDevise()
         self.removeSideMenu()
     }
     

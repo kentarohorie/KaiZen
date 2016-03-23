@@ -162,7 +162,8 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            reviewSheetTmp.reviewArray.removeAtIndex(indexPath.row)
+            
+            reviewSheetTmp.reviewArray.removeAtIndex(indexPath.section)
             tableView.reloadData()
             ReviewSheetManager.saveForDevise()
         }

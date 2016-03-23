@@ -16,6 +16,7 @@
 		AA01408E1C942B38004687E3 /* question128_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01408C1C942B38004687E3 /* question128_2.png */; };
 		AA0140901C942F58004687E3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA01408F1C942F58004687E3 /* MessageUI.framework */; };
 		AA0140941C94748B004687E3 /* launch_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0140931C94748B004687E3 /* launch_screen.png */; };
+		AA01409C1C95BB50004687E3 /* empty_image.png in Resources */ = {isa = PBXBuildFile; fileRef = AA01409B1C95BB50004687E3 /* empty_image.png */; };
 		AA0F0DB81C68521500815833 /* MainBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DB71C68521500815833 /* MainBoardViewController.swift */; };
 		AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DB91C68538600815833 /* ShowChartViewController.swift */; };
 		AA0F0DDD1C6908FC00815833 /* ReviewSheatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */; };
@@ -39,7 +40,6 @@
 		AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46551C474D7400A9F288 /* ReviewSheet.swift */; };
 		AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */; };
 		AA3A46621C47539200A9F288 /* ShowReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */; };
-		AA3A46721C48EF3800A9F288 /* show.png in Resources */ = {isa = PBXBuildFile; fileRef = AA3A46711C48EF3800A9F288 /* show.png */; };
 		AA3F390C1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F390A1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift */; };
 		AA3F390D1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3F390B1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib */; };
 		AA70EE7B1C7C6FEA003427BC /* trash_128px.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70EE771C7C6FEA003427BC /* trash_128px.png */; };
@@ -49,7 +49,6 @@
 		AA70EE881C7C7FBC003427BC /* check_128px.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70EE871C7C7FBC003427BC /* check_128px.png */; };
 		AA70EE8A1C7C8A0C003427BC /* new_sheet_128px.png in Resources */ = {isa = PBXBuildFile; fileRef = AA70EE891C7C8A0C003427BC /* new_sheet_128px.png */; };
 		AA87A05A1C6C24D100560495 /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87A0591C6C24D100560495 /* GeneralViewModel.swift */; };
-		AAA76AD81C4F7D70006184E8 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA76AD71C4F7D70006184E8 /* ball.png */; };
 		AAB3E2A31C6B79CC00B429DB /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +63,7 @@
 		AA01408C1C942B38004687E3 /* question128_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question128_2.png; sourceTree = "<group>"; };
 		AA01408F1C942F58004687E3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AA0140931C94748B004687E3 /* launch_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_screen.png; sourceTree = "<group>"; };
+		AA01409B1C95BB50004687E3 /* empty_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_image.png; sourceTree = "<group>"; };
 		AA0F0DB71C68521500815833 /* MainBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBoardViewController.swift; sourceTree = "<group>"; };
 		AA0F0DB91C68538600815833 /* ShowChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowChartViewController.swift; sourceTree = "<group>"; };
 		AA0F0DDC1C6908FC00815833 /* ReviewSheatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheatView.swift; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 		AA3A46551C474D7400A9F288 /* ReviewSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheet.swift; sourceTree = "<group>"; };
 		AA3A46571C474F4D00A9F288 /* ReviewSheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewSheetManager.swift; sourceTree = "<group>"; };
 		AA3A46611C47539200A9F288 /* ShowReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowReviewViewController.swift; sourceTree = "<group>"; };
-		AA3A46711C48EF3800A9F288 /* show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show.png; sourceTree = "<group>"; };
 		AA3F390A1C76BA7E00ED0B33 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		AA3F390B1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		AA70EE771C7C6FEA003427BC /* trash_128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash_128px.png; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 		AA70EE871C7C7FBC003427BC /* check_128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_128px.png; sourceTree = "<group>"; };
 		AA70EE891C7C8A0C003427BC /* new_sheet_128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_sheet_128px.png; sourceTree = "<group>"; };
 		AA87A0591C6C24D100560495 /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
-		AAA76AD71C4F7D70006184E8 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		AAB3E2A21C6B79CC00B429DB /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		AAB3E2A51C6B813300B429DB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E4CFBC8A31CCB8CAA89B7643 /* libPods-KaiZen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaiZen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,8 +246,6 @@
 			children = (
 				AA3A46311C4740D600A9F288 /* AppDelegate.swift */,
 				AA3A46351C4740D600A9F288 /* Main.storyboard */,
-				AA3A46711C48EF3800A9F288 /* show.png */,
-				AAA76AD71C4F7D70006184E8 /* ball.png */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -360,6 +356,7 @@
 			children = (
 				AA01408B1C942B38004687E3 /* question128_1.png */,
 				AA01408C1C942B38004687E3 /* question128_2.png */,
+				AA01409B1C95BB50004687E3 /* empty_image.png */,
 				AA0140931C94748B004687E3 /* launch_screen.png */,
 				AA0140871C928757004687E3 /* check_128alt.png */,
 				AA0140881C928757004687E3 /* check_128alt2.png */,
@@ -446,7 +443,6 @@
 				AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */,
 				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
 				AA70EE7C1C7C6FEA003427BC /* add_128px.png in Resources */,
-				AA3A46721C48EF3800A9F288 /* show.png in Resources */,
 				AA3F390D1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib in Resources */,
 				AA01170A1C70424F00843BA1 /* NoGraphDataView.xib in Resources */,
 				AA0F0DE51C690C5E00815833 /* ReviewSheatTableViewCell.xib in Resources */,
@@ -454,6 +450,7 @@
 				AA70EE7B1C7C6FEA003427BC /* trash_128px.png in Resources */,
 				AA01408A1C928757004687E3 /* check_128alt2.png in Resources */,
 				AA0F0DDF1C69094700815833 /* ReviewSheatView.xib in Resources */,
+				AA01409C1C95BB50004687E3 /* empty_image.png in Resources */,
 				AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */,
 				AA1AEB811C6A394300C70138 /* AddReviewView.xib in Resources */,
 				AA0140891C928757004687E3 /* check_128alt.png in Resources */,
@@ -462,7 +459,6 @@
 				AA01408D1C942B38004687E3 /* question128_1.png in Resources */,
 				AA0140941C94748B004687E3 /* launch_screen.png in Resources */,
 				AA70EE851C7C7787003427BC /* menu_128px.png in Resources */,
-				AAA76AD81C4F7D70006184E8 /* ball.png in Resources */,
 				AA3A463C1C4740D600A9F288 /* Assets.xcassets in Resources */,
 				AA70EE881C7C7FBC003427BC /* check_128px.png in Resources */,
 				AA3A46371C4740D600A9F288 /* Main.storyboard in Resources */,

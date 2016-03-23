@@ -11,16 +11,38 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36G-je-f8H">
-                    <rect key="frame" x="118" y="306" width="138" height="55"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-PM-Nqj">
+                    <rect key="frame" x="87" y="135" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="6Rj-oB-ex9"/>
+                        <constraint firstAttribute="width" constant="200" id="vZs-67-GTg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36G-je-f8H">
+                    <rect key="frame" x="106" y="343" width="163" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="4iY-9X-44c"/>
+                        <constraint firstAttribute="width" constant="163" id="s7K-BH-Ajy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="36G-je-f8H" secondAttribute="trailing" constant="106" id="97o-EF-esX"/>
+                <constraint firstAttribute="trailing" secondItem="sLb-PM-Nqj" secondAttribute="trailing" constant="88" id="GWK-KE-r7d"/>
+                <constraint firstItem="36G-je-f8H" firstAttribute="top" secondItem="sLb-PM-Nqj" secondAttribute="bottom" constant="8" id="a2d-jr-WDd"/>
+                <constraint firstItem="36G-je-f8H" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="106" id="cFn-fT-3SP"/>
+                <constraint firstItem="sLb-PM-Nqj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="87" id="nEf-Up-Wds"/>
+                <constraint firstItem="sLb-PM-Nqj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="135" id="vCb-rs-AWH"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="322.5" y="334.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="empty_image.png" width="1024" height="1024"/>
+    </resources>
 </document>
