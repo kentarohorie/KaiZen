@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol AddReviewViewDelegate {
     optional func tapAddOfAddView(text: String)
+    optional func tapCloseOfAddView()
 }
 
 class AddReviewView: UIView, UITextFieldDelegate {
@@ -69,6 +70,8 @@ class AddReviewView: UIView, UITextFieldDelegate {
     @IBAction func tapClose(sender: UIButton) {
         closeAnimation()
         textField.resignFirstResponder()
+        
+        customDelegate?.tapCloseOfAddView!()
     }
     
     

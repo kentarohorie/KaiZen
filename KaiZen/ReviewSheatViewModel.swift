@@ -66,6 +66,11 @@ class ReviewSheatViewModel: NSObject, UITableViewDataSource, UITableViewDelegate
         ReviewSheetManager.saveForDevise()
     }
     
+    func tapCloseOfAddView() {
+        return
+    }    
+    
+    
     func tapDone(tableView: UITableView) {
         guard reviewSheetTmp.reviewArray.count != 0 else {
             customDelegate?.isDataAlert(false)

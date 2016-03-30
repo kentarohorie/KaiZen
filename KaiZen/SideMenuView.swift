@@ -127,7 +127,7 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
             self.addSheetView?.center.y = self.center.y
         }
         
-        self.addSubview(addSheetView!)
+        baseView.addSubview(addSheetView!)
         isDisplayAddView = true
         
         addSheetView?.textField.becomeFirstResponder()
@@ -160,7 +160,9 @@ class SideMenuView: UIView, UITableViewDataSource, UITableViewDelegate, AddRevie
         sideMenuTableView.reloadData() //callbackで
     }
     
-    
+    func tapCloseOfAddView() {
+        
+    }
     
     
     

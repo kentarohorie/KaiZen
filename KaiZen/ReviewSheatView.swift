@@ -83,7 +83,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         self.addSubview(addView)
     }
     
-    func appearSideMenu() {
+    func appearSideMenu() {        
         (self.superview?.superview as? UIScrollView)?.scrollEnabled = false
         UIApplication.sharedApplication().statusBarHidden = true
         
