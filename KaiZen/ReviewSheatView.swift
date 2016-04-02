@@ -165,7 +165,7 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
         let secondViewController = ShowChartViewController()
         mainBoardViewController?.pageViewController.setViewControllers([secondViewController], direction: .Forward, animated: true, completion: nil)
         
-            mainBoardViewController?.generalViewModel.isSecond = true
+        mainBoardViewController?.generalViewModel.isSecond = true
     }
     
     func edgeSwipeRight(sender: UIScreenEdgePanGestureRecognizer) {

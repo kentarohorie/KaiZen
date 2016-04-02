@@ -20,11 +20,9 @@ class ShowReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.customDelegate = reviewSheatViewModel
         customDelegate?.viewDidLoad!({ () -> Void in
             self.reviewSheatViewSetUP()
-
         })
         reviewSheatViewSetUP()
     }
