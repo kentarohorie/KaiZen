@@ -33,6 +33,11 @@ class ReviewSheetManager {
     class func fetchFromDevise(callback: () -> Void ) {
         let defaults = NSUserDefaults.standardUserDefaults()
         
+        guard self.sharedInstance.reviewSheetArray.count == 0 else {
+            print("over time fetch")
+            return
+        }
+        
         guard let fetchReviewSheetArray = defaults.objectForKey("reviewSheetArray") as? [[String: AnyObject]] else {
             print("fetch error")
             callback()
