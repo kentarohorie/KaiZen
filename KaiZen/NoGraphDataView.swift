@@ -10,8 +10,11 @@ import UIKit
 
 class NoGraphDataView: UIView {
 
+    @IBOutlet weak var noDataLabel: UILabel!
+    
     override func awakeFromNib() {
         self.frame = UIScreen.mainScreen().bounds
+        noDataLabel.adjustsFontSizeToFitWidth = true
     }
 
 }
