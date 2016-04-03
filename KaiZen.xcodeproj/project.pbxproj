@@ -28,6 +28,12 @@
 		AA1AEB831C6A395900C70138 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB821C6A395900C70138 /* AddReviewView.swift */; };
 		AA1AEB851C6AF9E400C70138 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1AEB841C6AF9E400C70138 /* ChartView.swift */; };
 		AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1AEB861C6AF9EF00C70138 /* ChartView.xib */; };
+		AA1D1F9B1CB0E0E100D0F311 /* walkthroughView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1D1F9A1CB0E0E100D0F311 /* walkthroughView.xib */; };
+		AA1D1F9D1CB0E0F600D0F311 /* walkThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D1F9C1CB0E0F600D0F311 /* walkThroughView.swift */; };
+		AA1D1FA31CB0E83600D0F311 /* WT1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1D1F9F1CB0E83600D0F311 /* WT1.png */; };
+		AA1D1FA41CB0E83600D0F311 /* WT2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1D1FA01CB0E83600D0F311 /* WT2.png */; };
+		AA1D1FA51CB0E83600D0F311 /* WT3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1D1FA11CB0E83600D0F311 /* WT3.png */; };
+		AA1D1FA61CB0E83600D0F311 /* WT4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA1D1FA21CB0E83600D0F311 /* WT4.png */; };
 		AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA28E14D1C744ACC0073453F /* SideMenuView.xib */; };
 		AA28E1501C744AE90073453F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28E14F1C744AE90073453F /* SideMenuView.swift */; };
 		AA2BB1D11C7B4B3A0088D7D5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BB1D01C7B4B3A0088D7D5 /* UIView+Extension.swift */; };
@@ -76,6 +82,12 @@
 		AA1AEB821C6A395900C70138 /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		AA1AEB841C6AF9E400C70138 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		AA1AEB861C6AF9EF00C70138 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		AA1D1F9A1CB0E0E100D0F311 /* walkthroughView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = walkthroughView.xib; sourceTree = "<group>"; };
+		AA1D1F9C1CB0E0F600D0F311 /* walkThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = walkThroughView.swift; sourceTree = "<group>"; };
+		AA1D1F9F1CB0E83600D0F311 /* WT1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT1.png; sourceTree = "<group>"; };
+		AA1D1FA01CB0E83600D0F311 /* WT2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT2.png; sourceTree = "<group>"; };
+		AA1D1FA11CB0E83600D0F311 /* WT3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT3.png; sourceTree = "<group>"; };
+		AA1D1FA21CB0E83600D0F311 /* WT4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WT4.png; sourceTree = "<group>"; };
 		AA28E14D1C744ACC0073453F /* SideMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuView.xib; sourceTree = "<group>"; };
 		AA28E14F1C744AE90073453F /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		AA2BB1D01C7B4B3A0088D7D5 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -189,6 +201,35 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		AA1D1F981CB0DFAD00D0F311 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				AA1D1F9E1CB0E82100D0F311 /* WTImage */,
+				AA1D1F991CB0E0CA00D0F311 /* views */,
+			);
+			name = Walkthrough;
+			sourceTree = "<group>";
+		};
+		AA1D1F991CB0E0CA00D0F311 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				AA1D1F9C1CB0E0F600D0F311 /* walkThroughView.swift */,
+				AA1D1F9A1CB0E0E100D0F311 /* walkthroughView.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		AA1D1F9E1CB0E82100D0F311 /* WTImage */ = {
+			isa = PBXGroup;
+			children = (
+				AA1D1F9F1CB0E83600D0F311 /* WT1.png */,
+				AA1D1FA01CB0E83600D0F311 /* WT2.png */,
+				AA1D1FA11CB0E83600D0F311 /* WT3.png */,
+				AA1D1FA21CB0E83600D0F311 /* WT4.png */,
+			);
+			name = WTImage;
+			sourceTree = "<group>";
+		};
 		AA28E14C1C744AA80073453F /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +297,7 @@
 		AA3A46471C474A1000A9F288 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AA1D1F981CB0DFAD00D0F311 /* Walkthrough */,
 				AA28E14C1C744AA80073453F /* SideMenu */,
 				AA3A464C1C474BAC00A9F288 /* ShowReview */,
 				AA04D51A1C5621C3009BD0A8 /* ShowChart */,
@@ -443,16 +485,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1D1FA61CB0E83600D0F311 /* WT4.png in Resources */,
 				AA28E14E1C744ACC0073453F /* SideMenuView.xib in Resources */,
 				AA3A463F1C4740D600A9F288 /* LaunchScreen.storyboard in Resources */,
 				AA70EE7C1C7C6FEA003427BC /* add_128px.png in Resources */,
 				AA3F390D1C76BA7E00ED0B33 /* SideMenuTableViewCell.xib in Resources */,
 				AA01170A1C70424F00843BA1 /* NoGraphDataView.xib in Resources */,
+				AA1D1FA41CB0E83600D0F311 /* WT2.png in Resources */,
 				AA0F0DE51C690C5E00815833 /* ReviewSheatTableViewCell.xib in Resources */,
+				AA1D1FA31CB0E83600D0F311 /* WT1.png in Resources */,
 				AA70EE8A1C7C8A0C003427BC /* new_sheet_128px.png in Resources */,
 				AA70EE7B1C7C6FEA003427BC /* trash_128px.png in Resources */,
 				AA01408A1C928757004687E3 /* check_128alt2.png in Resources */,
 				AA0F0DDF1C69094700815833 /* ReviewSheatView.xib in Resources */,
+				AA1D1FA51CB0E83600D0F311 /* WT3.png in Resources */,
+				AA1D1F9B1CB0E0E100D0F311 /* walkthroughView.xib in Resources */,
 				AA01409C1C95BB50004687E3 /* empty_image.png in Resources */,
 				AA1AEB871C6AF9EF00C70138 /* ChartView.xib in Resources */,
 				AA1AEB811C6A394300C70138 /* AddReviewView.xib in Resources */,
@@ -533,6 +580,7 @@
 				AA0F0DBA1C68538600815833 /* ShowChartViewController.swift in Sources */,
 				AA7D13991CA2C7650054ECDF /* UIViewController+Extension.swift in Sources */,
 				AA3A46581C474F4D00A9F288 /* ReviewSheetManager.swift in Sources */,
+				AA1D1F9D1CB0E0F600D0F311 /* walkThroughView.swift in Sources */,
 				AA0F0DE41C690C5E00815833 /* ReviewSheatTableViewCell.swift in Sources */,
 				AA3A46561C474D7400A9F288 /* ReviewSheet.swift in Sources */,
 				AA3A463A1C4740D600A9F288 /* KaiZen.xcdatamodeld in Sources */,

@@ -18,7 +18,9 @@ class MainBoardViewController: UIViewController, UIScrollViewDelegate {
         if isFirstRun() {
             ReviewSheetManager.addExampleData()
         }
+        
         pageViewControllerSetting()
+        showWalkthrough()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +48,12 @@ class MainBoardViewController: UIViewController, UIScrollViewDelegate {
                 (i as! UIScrollView).delegate = generalViewModel
             }
         }
+    }
+    
+    func showWalkthrough() {
+        let walkthroughView = UINib(nibName: "walkthroughView", bundle: nil).instantiateWithOwner(self, options: nil).first as! walkThroughView
+        view.addSubview(walkthroughView)
+//        view.bringSubviewToFront(walkthroughView)
     }
     
 
