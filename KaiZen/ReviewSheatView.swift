@@ -149,7 +149,6 @@ class ReviewSheatView: UIView, ReviewSheatViewModelDelegate, UIGestureRecognizer
     
     @IBAction func tapDone(sender: UIButton) {
         customDelegate?.tapDone!(tableView)
-        
     }
     
     @IBAction func tapMenu(sender: UIButton) {
